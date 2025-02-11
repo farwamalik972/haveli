@@ -482,9 +482,17 @@ body {
 // footer scss
 
 .footer {
-    background-color: black;
+    background-image: url("./Images/footer-bg.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    // background-color: black;
     padding: 70px 0;
     font-family: "Poppins", sans-serif;
+    .footer-logo{
+        width: 100%;
+    }
 
     .footer-col {
         h4 {
@@ -1386,81 +1394,114 @@ $nav-arrow-spacing: 10px;
 //   contact-warrper scss
 
 .contact-warrper{
-    padding: 90px 0px;
-    .footer_get_touch_outer {
-        margin-top: 40px;
-        background: #f2f4f6;
+    .restaurant-contact {
+        margin: 120px 0px;
+        .contact-heading {
+            text-align: center;
+            font-size: 45px;
+            font-weight: 700;
+            margin-bottom: 50px;
+        }
+        .info-card {
+          text-align: center;
+          padding: 15px;
+          margin-bottom: 20px;
+          border-radius: 8px;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          &.reservations {
+            background: black;
+            color: white;
+            max-height: 250px;
+          }
+          &.timing {
+            background: black;
+            color: white;
+            max-height: 250px;
+            .time {
+              font-weight: bold;
+            }
+          }
+        }
+        .address-card {
+          text-align: center;
+          padding: 10px;
+          margin-bottom: 20px;
+          border: 1px solid rgb(193 138 106 / 33%);
+          border-radius: 8px;
+          h3{
+            font-size: 18px;
+            font-weight: 600;
+          }
+          p{
+            font-size: 22px;
+            font-weight: 700;
+            color: #7A7A7A;
+          }
+        }
+        .contacts {
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid rgb(193 138 106 / 33%);
+            padding: 10px;
+            width: 100%;
+            margin: auto;
+          .contact-item {
+            padding: 10px;
+            p{
+                margin-bottom: 4px;
+                font-size: 15px;
+                font-weight: 500;
+                color: #7A7A7A;
+            }
+            .icon {
+                margin-bottom: 32px;
+                width: 38px;
+                height: 38px;
+                object-fit: cover;
+                color: #dd3333;
+            }
+            .contact-number, .email {
+              font-weight: bold;
+              font-size: 20px;
+            }
+          }
+        }
+        .map-container {
+          margin-top: 20px;
+          border: 1px solid rgb(193 138 106 / 33%);
+          border-radius: 8px;
+        }
+        .feedback-form {
+          padding: 15px;
+          .title{
+            font-size: 26px;
+            font-weight: 700;
+          }
+          label{
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 10px;
+          }
+          .submit-btn {
+            border: none;
+            background: #d32f2f;
+            color: white;
+            width: 100%;
+            &:hover {
+              background: #b71c1c;
+            }
+          }
+        }
+        .custom-input {
+          border: 1px solid black !important;
+          box-shadow: none !important;
+          height: 35px;
+          &:focus {
+            box-shadow: none !important;
+          }
+        }
       }
-      
-      .footer_get_touch_inner {
-        display: flex;
-        // gap: 30px;
-      }
-      
-      .get_form_inner {
-        background: #fff;
-        padding: 50px 40px;
-        box-shadow: -4px -2px 20px -7px #cfd5df;
-      }
-      
-      .get_form_inner_text h3 {
-        font-size: 26px;
-        font-weight: 600;
-        color: #333;
-        margin-bottom: 40px;
-      }
-      
-      .get_form input,
-      .get_form textarea {
-        width: 100%;
-        border: 1px solid #dbdbdb;
-        padding: 10px;
-        margin-bottom: 15px;
-      }
-      
-      .submit-btn {
-        background: #103e65;
-        color: #fff;
-        border: none;
-        padding: 10px 20px;
-        cursor: pointer;
-        transition: 0.3s;
-      }
-      
-      .submit-btn:hover {
-        background: #f85508;
-      }
-      
-      .get_say_form {
-        background: #103e65;
-        color: #fff;
-        padding: 45px 30px;
-        text-align: center;
-      }
-      
-      .get_say_info_sec li {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 20px;
-      }
-      
-      .get_say_info_sec a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 16px;
-      }
-      
-      .get_say_social-icn {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin-top: 20px;
-      }
-      
-      .get_say_social-icn a {
-        color: #fff;
-        font-size: 20px;
-      }
-      
 }

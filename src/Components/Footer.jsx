@@ -1,6 +1,7 @@
 import React from 'react'
 import { Container, Row, Col } from "react-bootstrap";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import logo from "../Images/footer-logo.png"
 
 function Footer() {
   return (
@@ -8,35 +9,34 @@ function Footer() {
       <Container>
         <Row>
           <Col md={3} sm={6} className="footer-col">
-            <h4>Company</h4>
+            <img className='footer-logo' src={logo} alt="" />
+          </Col>
+          <Col md={3} sm={6} className="footer-col">
+            <h4>Quick Links</h4>
             <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Our Services</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Affiliate Program</a></li>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Menu</a></li>
+              <li><a href="#">Contact</a></li>
+             
+             
             </ul>
           </Col>
           <Col md={3} sm={6} className="footer-col">
-            <h4>Get Help</h4>
+            <h4>More About</h4>
             <ul>
-              <li><a href="#">FAQ</a></li>
-              <li><a href="#">Shipping</a></li>
-              <li><a href="#">Returns</a></li>
-              <li><a href="#">Order Status</a></li>
-              <li><a href="#">Payment Options</a></li>
+            <li><a href="#">Dining & Experience</a></li>
+              <li><a href="#">Club & Events</a></li>
+              <li><a href="#">News & Projects</a></li>
             </ul>
           </Col>
           <Col md={3} sm={6} className="footer-col">
-            <h4>Online Shop</h4>
+            <h4>Get In Touch</h4>
             <ul>
-              <li><a href="#">Watch</a></li>
-              <li><a href="#">Bag</a></li>
-              <li><a href="#">Shoes</a></li>
-              <li><a href="#">Dress</a></li>
+              <li><a href="">info@haveli.com.pk</a></li>
+              <li><a href="">Phone:+92 300 841 4899</a></li>
+              <li><a href="">Phone:+92 300 841 4899</a></li>
             </ul>
-          </Col>
-          <Col md={3} sm={6} className="footer-col">
-            <h4>Follow Us</h4>
             <div className="social-links">
               <a href="#"><FaFacebookF /></a>
               <a href="#"><FaTwitter /></a>
