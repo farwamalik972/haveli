@@ -238,10 +238,10 @@ body {
 
             .carousel-text {
                 bottom: 10%;
-                left: 128px;
+                left: 225px !important;
 
                 .carousel-text-inner {
-                    min-width: 400px;
+                    min-width: 373px !important;
                     // padding: 15px;
                     width: 100%;
                 }
@@ -303,6 +303,15 @@ body {
             line-height: 26px;
             letter-spacing: 1px;
             margin-bottom: 0;
+        }
+    }
+    @media (max-width: 768px) {
+        .welcom-wrapper {
+            padding: 40px 20px !important;
+          h2{
+            font-size: 30px !important;
+            font-weight: 700 !important;
+          }
         }
     }
 
@@ -406,10 +415,19 @@ body {
     @media (max-width: 768px) {
         .leftRightImageBlock {
             width: 100%;
-            max-width: 100%;
-            background-size: contain;
+            max-width: 400px;
+            background-size: cover;
             background-position: center top;
             height: 340px;
+            margin: auto;
+        }
+        .leftRightTextBlock{
+              width: 100% !important;
+              min-width: 100% !important;
+        }
+        .page-heading{
+            font-size: 40px !important;
+            font-weight: 700 !important;
         }
     }
 
@@ -738,6 +756,23 @@ body {
             }
         }
     }
+    @media (max-width: 768px) {
+        .history-container{
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 10px !important;
+        }
+         .history-images{
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 10px !important;
+        }
+        .history-images img {
+            width: 100% !important;
+            max-width: 100% !important;
+        }
+
+    }
 
 }
 
@@ -824,6 +859,11 @@ body {
                     }
                 }
             }
+        }
+    }
+    @media (max-width: 768px) {
+        .image-container{
+       height: 55vh !important;
         }
     }
 }
@@ -935,6 +975,14 @@ body {
         justify-content: center;
         align-items: center;
       }
+      @media (max-width: 768px) {
+        .header {
+            height: 45vh !important;
+        }
+        .header-text{
+            font-size: 40px !important;
+        }
+      }
       
       .header-text {
         font-size: 50px;
@@ -1006,7 +1054,14 @@ body {
         }
        
       }
-      }    
+      }   
+      @media (max-width: 768px) {
+        .toast-wrapper{
+            .toast-heading{
+                font-size: 35px !important;
+            }
+        }
+      }
 }
 
 $general-radius: 10px;
@@ -1054,6 +1109,14 @@ $nav-arrow-spacing: 10px;
       justify-content: center;
       align-items: center;
     }
+    @media (max-width: 768px) {
+        .header {
+            height: 45vh !important;
+        }
+        .header-text{
+            font-size: 40px !important;
+        }
+      }
   
     .header-text {
       font-size: 50px;
@@ -1317,7 +1380,9 @@ $nav-arrow-spacing: 10px;
       font-weight: 700;
       margin-bottom: 30px;
     }
-  
+    @media (max-width: 768px) {
+        margin-top: 50px !important;
+    }
     // Masonry Grid Layout
     .masonry-grid {
       column-count: 3;  // 3 Columns

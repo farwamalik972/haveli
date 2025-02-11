@@ -70,7 +70,7 @@ function Home() {
       <h2 className='page-heading mb-5'>Atmospheric Imagery</h2>
       <Row>
         {cardData.map((card, index) => (
-          <Col md={4} key={index}>
+          <Col md={4} key={index} className='mb-4'>
             <Card className="d_card">
               <div className="card-image" style={{ backgroundImage: `url(${card.img})` }}></div>
               <Card.Body className="content">

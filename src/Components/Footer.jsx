@@ -14,10 +14,10 @@ function Footer() {
           <Col md={3} sm={6} className="footer-col">
             <h4>Quick Links</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
               <li><a href="#">Menu</a></li>
-              <li><a href="#">Contact</a></li>
+              <li><a href="/contact">Contact</a></li>
              
              
             </ul>
@@ -25,7 +25,7 @@ function Footer() {
           <Col md={3} sm={6} className="footer-col">
             <h4>More About</h4>
             <ul>
-            <li><a href="#">Dining & Experience</a></li>
+            <li><a href="/dining-experience">Dining & Experience</a></li>
               <li><a href="#">Club & Events</a></li>
               <li><a href="#">News & Projects</a></li>
             </ul>

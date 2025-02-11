@@ -13,7 +13,7 @@ function Contact() {
       <Row>
         <Col md={8}>
           <Row className='mb-3'>
-            <Col md={6}>
+            <Col md={6} className='mb-3'>
               <Card className="info-card reservations">
                 <Card.Body>
                   <Card.Title>Reservations</Card.Title>
