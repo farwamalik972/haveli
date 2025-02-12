@@ -38,7 +38,7 @@ function MainNav() {
                                 <NavDropdown.Item href="#event-catering" className="dropdown-item-custom">Event & Catering Services</NavDropdown.Item>
                             </NavDropdown>
 
-                            <Nav.Link href="#menu" className="nav-link-custom">Menu</Nav.Link>
+                            <Nav.Link href="/menu" className="nav-link-custom">Menu</Nav.Link>
                             <Nav.Link href="#news" className="nav-link-custom">News & Projects</Nav.Link>
                             <Nav.Link href="/contact" className="nav-link-custom">Contact</Nav.Link>
                         </Nav>

@@ -9,6 +9,7 @@ import DiningExperience from "./pages/DiningExperience";
 import OpnSky from "./pages/OpnSky";
 import PhotoGellary from "./pages/PhotoGellary";
 import Contact from "./pages/Contact";
+import Menu from "./pages/Menu";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/open-sky" element={<OpnSky/>} />
         <Route path="/gellary" element={<PhotoGellary/>} />
         <Route path="/contact" element={<Contact/>} />
+        <Route path="/menu" element={<Menu/>} />
       </Routes>
     </Router>
   );
