@@ -1,67 +1,83 @@
-import React from 'react'
-import MainNav from '../Components/MainNav'
-import {Container, Row, Col, Card } from 'react-bootstrap';
-import vission from "../Images/vision.jpg"
-import mission from "../Images/mission.jpg"
+import React, { useEffect, useState } from 'react';
+import MainNav from '../Components/MainNav';
+import { Container, Row, Col, Card } from 'react-bootstrap';
 import Footer from '../Components/Footer';
+import axios from 'axios';
+import config from '../config';
 
 function MissionVission() {
-   
-    
+  const [missionVisionData, setMissionVisionData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios.get(`${config.API_BASE_URL}/api/mission`)
+      .then(response => {
+        setMissionVisionData(response.data); // assuming the API returns a single object or an array
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error("Error fetching data:", error);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
   return (
     <div className='mission-vission-wrapper'>
-    <MainNav/>
-    <Container className="vision-mission">
-      <section className="our-vision">
-        <Row className="align-items-center">
-          <Col md={6} className="image-container fixed-image">
-            <img src={vission} alt="Our Vision" className="img-fluid" />
-          </Col>
-          <Col md={6} className="text-container">
-            <div className="card-wrapper">
-              <Card className="content-card">
-                <Card.Body>
-                  <Card.Title>Our Vision</Card.Title>
-                  <Card.Text>
-                   Our vision is to be a beacon of Lahore's cultural and culinary heritage,
-                   where each meal is a journey through history and a celebration of flavors. 
-                   We aspire to establish Haveli Restaurant as a must-visit destination for 
-                   locals and tourists alike, showcasing the best of Lahore's architectural and cultural legacy. We aim to foster a strong sense of community by supporting local artisans, employing sustainable practices, and providing job opportunities. Our goal is to gain international acclaim for our dedication to preserving history, culinary excellence, and exceptional hospitality, making Haveli Restaurant synonymous with the finest dining experience in Lahore. Thank you for being a part of our story. Together, we celebrate the past and look forward to an exciting future.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </div>
-          </Col>
-        </Row>
-      </section>
+      <MainNav />
+      <Container className="vision-mission">
+        {loading ? (
+          <div>Loading...</div>
+        ) : (
+          <>
+            <section className="our-vision">
+              <Row className="align-items-center">
+                <Col md={6} className="image-container fixed-image">
+                  <img
+                    src={`${config.API_BASE_URL}/${missionVisionData.image_1}`} // Dynamic image
+                    alt={missionVisionData.name_1}
+                    className="img-fluid"
+                  />
+                </Col>
+                <Col md={6} className="text-container">
+                  <div className="card-wrapper">
+                    <Card className="content-card">
+                      <Card.Body>
+                        <Card.Title>{missionVisionData.name_1}</Card.Title>
+                        <Card.Text dangerouslySetInnerHTML={{ __html: missionVisionData.description_1 }} />
+                      </Card.Body>
+                    </Card>
+                  </div>
+                </Col>
+              </Row>
+            </section>
 
-      <section className="our-mission">
-        <Row className="align-items-center flex-row-reverse">
-          <Col md={6} className="image-container fixed-image">
-          <img src={mission} alt="Our Vision" className="img-fluid" />
-          </Col>
-          <Col md={6} className="text-container">
-            <div className="card-wrapper">
-              <Card className="content-card">
-                <Card.Body>
-                  <Card.Title>Our Mission</Card.Title>
-                  <Card.Text>
-                  At Haveli Restaurant, Lahore, our mission is to provide an exceptional dining 
-                  experience that celebrates the rich cultural heritage and culinary traditions 
-                  of our historic city. We are committed to preserving the architectural and historical 
-                  significance of Haveli Khalil Khan, creating a vibrant and welcoming space for all. 
-                  Our diverse menu features authentic Pakistani dishes prepared with the finest ingredients and a passion for flavor. We promote sustainable inner-city regeneration through modern amenities, environmental responsibility, and community engagement. Our warm, attentive, and personalized service ensures every guest feels valued and appreciated. We strive for continuous improvement and innovation to enhance our offerings and exceed our guests' expectations.
-                  </Card.Text>
-                </Card.Body>
-              </Card>
-            </div>
-          </Col>
-        </Row>
-      </section>
-    </Container>
-    <Footer/>
+            <section className="our-mission">
+              <Row className="align-items-center flex-row-reverse">
+                <Col md={6} className="image-container fixed-image">
+                  <img
+                    src={`${config.API_BASE_URL}/${missionVisionData.image_3}`} // Dynamic image
+                    alt={missionVisionData.name_2}
+                    className="img-fluid"
+                  />
+                </Col>
+                <Col md={6} className="text-container">
+                  <div className="card-wrapper">
+                    <Card className="content-card">
+                      <Card.Body>
+                        <Card.Title>{missionVisionData.name_2}</Card.Title>
+                        <Card.Text dangerouslySetInnerHTML={{ __html: missionVisionData.description_2 }} />
+                      </Card.Body>
+                    </Card>
+                  </div>
+                </Col>
+              </Row>
+            </section>
+          </>
+        )}
+      </Container>
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default MissionVission
+export default MissionVission;

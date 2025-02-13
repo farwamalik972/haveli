@@ -1,65 +1,99 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import MainNav from '../Components/MainNav'
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
-import dining from "../Images/1.png"
-import diningarea from "../Images/3.png"
-import music from "../Images/live-music.jpg"
+import { Container, Row, Col } from "react-bootstrap";
 import Footer from '../Components/Footer';
+import axios from 'axios';
+import config from '../config';
+import backimage from "../Images/dining.jpg"
 
 function DiningExperience() {
+  const [diningData, setDiningData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axios.get(`${config.API_BASE_URL}/api/dining`)
+      .then(response => {
+        setDiningData(response.data);
+        console.log(response.data);
+      })
+      .catch(error => {
+        console.error("Error fetching data:", error);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
+  if (loading) {
+    return <div>Loading...</div>; // You can customize this loading state as per your design
+  }
+
+  const {
+    backimage,
+    heading_1,
+    description_1,
+    heading_2,
+    description_2,
+    heading_3,
+    description_3,
+    image_1,
+    image_2,
+    image_3
+  } = diningData;
+
   return (
     <div className='dining-page-warpper'>
-    <MainNav/>
-    <div className="header">
-      <Container className="header-text">
-        Our Dining Area 
-      </Container>
-    </div>
-     <Container className="kebabSection mt-5">
+      <MainNav />
+      <div className="header">
+        <Container className="header-text">
+          {heading_1}
+        </Container>
+      </div>
+      <Container className="kebabSection mt-5">
         {/* First Section */}
         <Row className="section">
           <Col md={6} className="textSection">
-            <h2>Discover Palace</h2>
-            <p>
-              Experience the rich flavors of our authentic kebabs, crafted with 
-              fresh ingredients and traditional spices. Join us for a delightful meal!
-            </p>
+            <h2>{heading_1}</h2>
+            <p>{description_1}</p>
           </Col>
           <Col md={6} className="imageSection">
-            <div className="fixed-image" style={{ backgroundImage: `url(${dining})` }}></div>
+            <div className="fixed-image" style={{ backgroundImage: `url(${image_1})` }}></div>
           </Col>
         </Row>
         {/* Second Section */}
         <Row className="section flex-md-row-reverse">
           <Col md={6} className="textSection">
-            <h2>Authentic Taste</h2>
-            <p>
-              Our chefs bring you the best of Mediterranean cuisine with a touch of 
-              modern fusion. Come and enjoy the taste of tradition!
-            </p>
+            <h2>{heading_2}</h2>
+            <p>{description_2}</p>
           </Col>
           <Col md={6} className="imageSection">
-            <div className="fixed-image" style={{ backgroundImage: `url(${diningarea})` }}></div>
+            <div className="fixed-image" style={{ backgroundImage: `url(${image_2})` }}></div>
           </Col>
         </Row>
+        {/* Third Section */}
+        {/* <Row className="section">
+          <Col md={6} className="textSection">
+            <h2>{heading_3}</h2>
+            <p>{description_3}</p>
+          </Col>
+          <Col md={6} className="imageSection">
+            <div className="fixed-image" style={{ backgroundImage: `url(${image_3})` }}></div>
+          </Col>
+        </Row> */}
       </Container>
+      {/* Last Section with col-12 */}
       <div className="container mb-5">
         <div className="row">
-        <div className="col-md-12 toast-wrapper">
-            <h2 className='toast-heading'>A Toast to Live Music</h2>
-            <p className='toast-para'>The spirit of Lahore City comes to life at The Oban Hotels through our jam-packed schedule of Qawali 
-                and Ghazal shows, three nights a week. Settle in, order and get yourself in the groove for the night.
-                 After all, it is all about you.
-                 </p>
-                 <div className='music-image'>
-                    <img className='music-img' src={music} alt="music" />
-                 </div>
-        </div>
+          <div className="col-12 toast-wrapper">
+            <h2 className='toast-heading'>{heading_3}</h2>
+            <p className='toast-para'>{description_3}</p>
+            <div className='music-image'>
+              <img className='music-img' src={image_3} alt="music" />
+            </div>
+          </div>
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   )
 }
 
-export default DiningExperience
+export default DiningExperience;
