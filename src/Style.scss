@@ -1031,6 +1031,7 @@ body {
             z-index: 1;
             opacity: .75;
             transition: opacity .3s ease-in-out;
+            width: 100%;
            
           }
           .fixed-image:hover{
@@ -1050,8 +1051,8 @@ body {
 
       }
       .music-image{
-        .music-img{
-            width: 100%;
+        .fixed-image{
+            width: 100% !important;
         }
        
       }
@@ -1386,7 +1387,7 @@ $nav-arrow-spacing: 10px;
     }
     // Masonry Grid Layout
     .masonry-grid {
-      column-count: 3;  // 3 Columns
+      column-count: 2;  // 3 Columns
       column-gap: 15px;
       width: 100%;
       margin: 0 auto;

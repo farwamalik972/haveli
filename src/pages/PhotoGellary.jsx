@@ -51,7 +51,7 @@ function PhotoGallery() {
         ) : (
           <div className="masonry-grid p-5">
            {photoGallery.length > 0 ? (
-  <div className="masonry-grid p-5">
+      <div className="masonry-grid">
     {photoGallery.map((imageSrc, index) => (
       <div key={index} className="grid-item medium">
         <a href={getImagePath(imageSrc)} target="_blank" rel="noopener noreferrer">
