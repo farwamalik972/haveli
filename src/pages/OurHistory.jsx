@@ -44,19 +44,19 @@ function OurHistory() {
                             <div className="history-images">
                                 {historyData.image_1 && (
                                     <img
-                                        src={`${config.API_BASE_URL}/${historyData.image_1}`}
+                                        src={`${config.STORAGE_URL}/${historyData.image_1}`}
                                         alt="Haveli View"
                                     />
                                 )}
                                 {historyData.image_2 && (
                                     <img
-                                        src={`${config.API_BASE_URL}/${historyData.image_2}`}
+                                        src={`${config.STORAGE_URL}/${historyData.image_2}`}
                                         alt="Inside View"
                                     />
                                 )}
                                 {historyData.image_3 && (
                                     <img
-                                        src={`${config.API_BASE_URL}/${historyData.image_3}`}
+                                        src={`${config.STORAGE_URL}/${historyData.image_3}`}
                                         alt="Haveli View"
                                     />
                                 )}
@@ -69,37 +69,37 @@ function OurHistory() {
                             <div className="gallery-grid">
                                 {historyData.image_4 && (
                                     <img
-                                        src={`${config.API_BASE_URL}/${historyData.image_4}`}
+                                        src={`${config.STORAGE_URL}/${historyData.image_4}`}
                                         alt="Gallery 1"
                                     />
                                 )}
                                 {historyData.image_5 && (
                                     <img
-                                        src={`${config.API_BASE_URL}/${historyData.image_5}`}
+                                        src={`${config.STORAGE_URL}/${historyData.image_5}`}
                                         alt="Gallery 2"
                                     />
                                 )}
                                 {historyData.image_6 && (
                                     <img
-                                        src={`${config.API_BASE_URL}/${historyData.image_6}`}
+                                        src={`${config.STORAGE_URL}/${historyData.image_6}`}
                                         alt="Gallery 3"
                                     />
                                 )}
                                 {historyData.image_7 && (
                                     <img
-                                        src={`${config.API_BASE_URL}/${historyData.image_7}`}
+                                        src={`${config.STORAGE_URL}/${historyData.image_7}`}
                                         alt="Gallery 4"
                                     />
                                 )}
                                 {historyData.image_8 && (
                                     <img
-                                        src={`${config.API_BASE_URL}/${historyData.image_8}`}
+                                        src={`${config.STORAGE_URL}/${historyData.image_8}`}
                                         alt="Gallery 5"
                                     />
                                 )}
                                 {historyData.image_9 && (
                                     <img
-                                        src={`${config.API_BASE_URL}/${historyData.image_9}`}
+                                        src={`${config.STORAGE_URL}/${historyData.image_9}`}
                                         alt="Gallery 6"
                                     />
                                 )}
@@ -109,7 +109,7 @@ function OurHistory() {
                             <div className="restaurant-banner">
                                 {historyData.image_10 && (
                                     <img
-                                        src={`${config.API_BASE_URL}/${historyData.image_10}`}
+                                        src={`${config.STORAGE_URL}/${historyData.image_10}`}
                                         alt="Haveli Grill"
                                     />
                                 )}

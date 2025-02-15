@@ -44,7 +44,7 @@ const About = () => {
             <div className="col-12 col-lg-6">
               <img
                 className="img"
-                src={`${config.API_BASE_URL}/uploads/${about.image}`}
+                src={`${config.STORAGE_URL}/${about.image}`}
                 alt="Story"
               />
             </div>

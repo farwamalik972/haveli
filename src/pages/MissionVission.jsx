@@ -33,7 +33,7 @@ function MissionVission() {
               <Row className="align-items-center">
                 <Col md={6} className="image-container fixed-image">
                   <img
-                    src={`${config.API_BASE_URL}/${missionVisionData.image_1}`} // Dynamic image
+                    src={`${config.STORAGE_URL}/${missionVisionData.image_1}`} // Dynamic image
                     alt={missionVisionData.name_1}
                     className="img-fluid"
                   />
@@ -55,7 +55,7 @@ function MissionVission() {
               <Row className="align-items-center flex-row-reverse">
                 <Col md={6} className="image-container fixed-image">
                   <img
-                    src={`${config.API_BASE_URL}/${missionVisionData.image_3}`} // Dynamic image
+                    src={`${config.STORAGE_URL}/${missionVisionData.image_3}`} // Dynamic image
                     alt={missionVisionData.name_2}
                     className="img-fluid"
                   />

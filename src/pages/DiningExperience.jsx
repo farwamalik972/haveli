@@ -55,8 +55,17 @@ function DiningExperience() {
             <p>{description_1}</p>
           </Col>
           <Col md={6} className="imageSection">
-            <div className="fixed-image" style={{ backgroundImage: `url(${image_1})` }}></div>
+            <div className="fixed-image">
+            <img
+      className="fixed-image"
+      src={`${config.STORAGE_URL}/${image_1}`} 
+      alt="Dining Experience"
+      onError={(e) => (e.target.src = "/placeholder.jpg")} // Handle broken images
+    />
+            </div>
           </Col>
+
+
         </Row>
         {/* Second Section */}
         <Row className="section flex-md-row-reverse">
@@ -65,7 +74,15 @@ function DiningExperience() {
             <p>{description_2}</p>
           </Col>
           <Col md={6} className="imageSection">
-            <div className="fixed-image" style={{ backgroundImage: `url(${image_2})` }}></div>
+            <div className="fixed-image" >
+            <img
+      className="fixed-image"
+      src={`${config.STORAGE_URL}/${image_2}`} 
+      alt="Dining Experience"
+      onError={(e) => (e.target.src = "/placeholder.jpg")} // Handle broken images
+    />
+         
+            </div>
           </Col>
         </Row>
         {/* Third Section */}
@@ -86,7 +103,12 @@ function DiningExperience() {
             <h2 className='toast-heading'>{heading_3}</h2>
             <p className='toast-para'>{description_3}</p>
             <div className='music-image'>
-              <img className='music-img' src={image_3} alt="music" />
+            <img
+      className="fixed-image"
+      src={`${config.STORAGE_URL}/${image_3}`} 
+      alt="Dining Experience"
+      onError={(e) => (e.target.src = "/placeholder.jpg")} // Handle broken images
+    />
             </div>
           </div>
         </div>
