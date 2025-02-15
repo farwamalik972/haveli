@@ -10,18 +10,18 @@ import Footer from '../Components/Footer';
 function OpnSky() {
     const slides = [
         {
-            title: "Slide Title 1",
-            text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias ratione reiciendis neque quae ea earum laboriosam eligendi harum.",
+            title: "Haveli Restaurant",
+            text: "we continuously innovate to provide an unforgettable dining experience that celebrates Lahore's cultural heritage and culinary traditions. Thank you for choosing Haveli Restaurant. We look forward to making your visit truly memorable.",
             imageUrl: open,
         },
         {
-            title: "Slide Title 2",
-            text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias ratione reiciendis neque quae ea earum laboriosam eligendi harum.",
+            title: "Authentic Taste",
+            text: "At Haveli Restaurant, Lahore, our mission is to provide an exceptional dining experience that celebrates the rich cultural heritage and culinary traditions of our historic city",
             imageUrl: opn,
         },
         {
-            title: "Slide Title 3",
-            text: "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias ratione reiciendis neque quae ea earum laboriosam eligendi harum.",
+            title: "Discover Palace",
+            text: " Haveli Restaurant synonymous with the finest dining experience in Lahore. Thank you for being a part of our story.",
             imageUrl: roof,
         }
     ];
