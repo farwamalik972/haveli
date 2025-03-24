@@ -25,9 +25,9 @@ function Footer() {
           <Col md={3} sm={6} className="footer-col">
             <h4>More About</h4>
             <ul>
-            <li><a href="/dining-experience">Dining & Experience</a></li>
-              <li><a href="#">Club & Events</a></li>
-              <li><a href="#">News & Projects</a></li>
+            <li><a href="/dining-experience">Dining Area</a></li>
+              <li><a href="#"> Haveli Club</a></li>
+              <li><a href="#">Gallery</a></li>
             </ul>
           </Col>
           <Col md={3} sm={6} className="footer-col">

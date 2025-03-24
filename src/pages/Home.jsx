@@ -5,6 +5,9 @@ import { Container, Row, Col, Card } from 'react-bootstrap';
 import Footer from '../Components/Footer';
 import axios from 'axios';
 import config from '../config';
+import Preloader from '../Components/Preloader';
+import slide1 from "../../src/Images/slide-1.jpg"
+import CustomNavbar from '../Components/CustomNavbar';
 
 function Home() {
   const [restaurantData, setRestaurantData] = useState(null);
@@ -43,16 +46,19 @@ function Home() {
 
   return (
     <div className='home-page-wrapper'>
+      {/* <Preloader/> */}
       <MainNav />
       <HomeBanner />
       <div className='welcom-wrapper'>
         <h2>{restaurantData.heading_name}</h2>
         <div dangerouslySetInnerHTML={{ __html: restaurantData.description}}></div>
       </div>
-      <section className='black-section-bg mb-5'>
+      {/* <section className='black-section-bg mb-5'>
         <Container>
           <Row className='gap-5'>
-            <Col xs={12} md={8} className='leftRightImageBlock order-md-1'></Col>
+            <Col xs={12} md={8} className='leftRightImageBlock order-md-1'>
+            <img src={slide1} alt=""  className='left-img'/>
+            </Col>
             <Col xs={12} md={4} className='order-md-2'>
               <div className='leftRightTextBlock p-5 text-start'>
                 <div dangerouslySetInnerHTML={{ __html: restaurantData.note}}></div>
@@ -60,9 +66,9 @@ function Home() {
             </Col>
           </Row>
         </Container>
-      </section>
+      </section> */}
       <Container className='page-content'>
-        <h2 className='page-heading mb-5'>{restaurantData.atmospheric_imager_heading}</h2>
+        <h2 className='page-heading mb-5'>Atmospheric Imagery</h2>
         <Row>
           {cardData.map((card, index) => (
             <Col md={4} key={index} className='mb-4'>

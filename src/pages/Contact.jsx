@@ -1,122 +1,153 @@
-import React from 'react'
-import { Container, Row, Col, Card, Form, Button } from "react-bootstrap";
-import { FaMobileAlt, FaEnvelope } from "react-icons/fa";
-import MainNav from '../Components/MainNav';
-import Footer from '../Components/Footer';
+import React, { useEffect, useRef } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { gsap } from "gsap";
+import {
+  faMapMarkerAlt,
+  faPhoneAlt,
+  faClock,
+  faUserTie,
+  faEnvelope,
+} from "@fortawesome/free-solid-svg-icons";
+import MainNav from "../Components/MainNav";
+import Footer from "../Components/Footer";
 
-function Contact() {
+const Contact = () => {
+  const bigCircleRef = useRef(null);
+  const contactBoxRef = useRef(null);
+  const infoItemsRef = useRef([]);
+  const formRef = useRef(null);
+  const smallCirclesRef = useRef([]);
+
+  useEffect(() => {
+    // Big Circle Entrance
+    gsap.fromTo(
+      bigCircleRef.current,
+      { scale: 0, opacity: 0 },
+      { scale: 1, opacity: 1, duration: 1, ease: "power2.out" }
+    );
+
+    // Contact Box Slide-in
+    gsap.fromTo(
+      contactBoxRef.current,
+      { x: 100, opacity: 0 },
+      { x: 0, opacity: 1, duration: 1, delay: 0.5, ease: "power2.out" }
+    );
+
+    // Staggered Animation for Info Items
+    gsap.fromTo(
+      infoItemsRef.current,
+      { y: 20, opacity: 0 },
+      { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.out", delay: 1 }
+    );
+
+    // Form Floating Animation
+    gsap.to(formRef.current, {
+      y: -5,
+      repeat: -1,
+      yoyo: true,
+      duration: 2,
+      ease: "sine.inOut",
+    });
+
+    // Small Circles Random Floating Motion
+    smallCirclesRef.current.forEach((circle, i) => {
+      gsap.to(circle, {
+        x: gsap.utils.random(-10, 10),
+        y: gsap.utils.random(-10, 10),
+        repeat: -1,
+        yoyo: true,
+        duration: gsap.utils.random(1, 2),
+        ease: "sine.inOut",
+        delay: i * 0.3,
+      });
+    });
+  }, []);
+
   return (
-    <div className='contact-warrper'>
-        <MainNav/>
-        <Container fluid className="restaurant-contact">
-      <h2 className="contact-heading">Contact Us</h2>
-      <Row>
-        <Col md={8}>
-          <Row className='mb-3'>
-            <Col md={6} className='mb-3'>
-              <Card className="info-card reservations">
-                <Card.Body>
-                  <Card.Title>Reservations</Card.Title>
-                  <Card.Text className="contact-number">+92 321 465 1051</Card.Text>
-                  <small>(Please call after 1:00 pm)</small>
-                </Card.Body>
-              </Card>
-            </Col>
-            <Col md={6}>
-              <Card className="info-card timing">
-                <Card.Body>
-                  <Card.Title>Restaurant Timing</Card.Title>
-                  <p>Monday-Friday</p>
-                  <p className="time">1:00 pm to 1:00 am</p>
-                  <p>Saturday-Sunday</p>
-                  <p className="time">9:00 am to 1:00 am</p>
-                </Card.Body>
-              </Card>
-            </Col>
-          </Row>
-          <Card className="address-card mb-2">
-            <Card.Body>
-            <h3>Address</h3>
-              <p> 2170-A, Food Street, Fort Road, Lahore, Pakistan.</p>
-            </Card.Body>
-          </Card>
-          <Row className="contacts">
-            <Col md={4} className="contact-item">
-              <FaMobileAlt className="icon" />
-              <p>Admin Officer</p>
-              <p className="contact-number">+92 321 465 1051</p>
-            </Col>
-            <Col md={4} className="contact-item">
-              <FaMobileAlt className="icon" />
-              <p>General Manager</p>
-              <p className="contact-number">+92 300 841 4899</p>
-            </Col>
-            <Col md={4} className="contact-item">
-              <FaEnvelope className="icon" />
-              <p>Inquiries</p>
-              <p className="email">info@haveli.com.pk</p>
-            </Col>
-          </Row>
-          <div className="map-container">
-          <Container fluid className="p-0" style={{ position: 'relative', height: '100vh' }}>
-      <iframe
-        aria-hidden="true"
-        frameBorder="0"
-        tabIndex="-1"
-        style={{
-          // zIndex: -1,
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          top: 0,
-          left: 0,
-          border: 'none',
-          // opacity: 0,
-        }}
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3105.253938998218!2d-77.0368702!3d38.9071923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjIuMjIgMzgnMzcuNSJ9!5e0!3m2!1sen!2sus!4v1614534450235!5m2!1sen!2sus"
-      ></iframe>
-    </Container>
-          </div>
-        </Col>
-        <Col md={4}>
-          <Card className="feedback-form">
-            <Card.Body>
-              <Card.Title className='title'>Instant Inquiry/Feedback</Card.Title>
-              <Form>
-                <Form.Group>
-                  <Form.Label>Name:</Form.Label>
-                  <Form.Control type="text" className="custom-input" />
-                </Form.Group>
-                <Form.Group>
-                  <Form.Label>Phone:</Form.Label>
-                  <Form.Control type="text" className="custom-input" />
-                </Form.Group>
-                <Form.Group>
-                  <Form.Label>Email:</Form.Label>
-                  <Form.Control type="email" className="custom-input" />
-                </Form.Group>
-                <Form.Group>
-                  <Form.Label>Subject:</Form.Label>
-                  <Form.Control type="text" className="custom-input" />
-                </Form.Group>
-                <Form.Group>
-                  <Form.Label>Message/Inquiry:</Form.Label>
-                  <Form.Control as="textarea" rows={3} className="custom-input" />
-                </Form.Group>
-                <Form.Group className='mb-4'>
-                  <Form.Label>Verification: Please enter any two digits</Form.Label>
-                  <Form.Control type="text" className="custom-input" />
-                </Form.Group>
-                <Button className="submit-btn " type="submit">Submit</Button>
-              </Form>
-            </Card.Body>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
-    <Footer/>
-    </div>
-  )
-}
+    <div className="contact-wrapper">
+      <MainNav />
+      <div className="contact mb-5">
+        {/* Big Background Circle */}
+        <div className="big-circle" ref={bigCircleRef}></div>
 
-export default Contact
+        {/* Contact Box */}
+        <div className="contact-box" ref={contactBoxRef}>
+          {/* Left Side */}
+          <div className="contact-info">
+            <h2>Let's get in touch</h2>
+            {[
+              { icon: faPhoneAlt, label: "Reservations", text: "+92 321 465 1051 (Please call after 1:00 pm)" },
+              { icon: faClock, label: "Restaurant Timing", text: "Mon-Fri: 1:00 pm - 1:00 am\nSat-Sun: 9:00 am - 1:00 am" },
+              { icon: faMapMarkerAlt, label: "Address", text: "2170-A, Food Street, Fort Road, Lahore, Pakistan" },
+              { icon: faUserTie, label: "Admin Officer", text: "+92 321 465 1051" },
+              { icon: faUserTie, label: "General Manager", text: "+92 300 841 4899" },
+              { icon: faEnvelope, label: "Inquiries", text: "info@haveli.com.pk" },
+            ].map((item, index) => (
+              <div
+                className="info-item"
+                key={index}
+                ref={(el) => (infoItemsRef.current[index] = el)}
+              >
+                <FontAwesomeIcon icon={item.icon} />
+                <p>
+                  <strong>{item.label}</strong>
+                  <br />
+                  {item.text}
+                </p>
+              </div>
+            ))}
+
+            <div className="map-container">
+              <iframe
+                title="Google Map"
+                src="https://www.google.com/maps/embed?pb=..."
+                width="100%"
+                height="250"
+                style={{ border: 0, borderRadius: "10px", marginTop: "20px" }}
+                allowFullScreen=""
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+
+          {/* Right Side (Contact Form) */}
+          <div className="contact-form" ref={formRef}>
+            {/* Floating Circles Inside Form */}
+            <div
+              className="small-circle top-left"
+              ref={(el) => (smallCirclesRef.current[0] = el)}
+            ></div>
+            <div
+              className="small-circle bottom-right"
+              ref={(el) => (smallCirclesRef.current[1] = el)}
+            ></div>
+
+            <h3>Instant Inquiry/Feedback</h3>
+            <form className="mb-4">
+              <label className="mb-2">Name: *</label>
+              <input type="text" />
+              <label className="mb-2">Phone: *</label>
+              <input type="email" />
+              <label className="mb-2">Email: *</label>
+              <input type="subject" />
+              <label className="mb-2">Subject:</label>
+              <input type="tel" />
+              <label className="mb-2">Message/inquiry: *</label>
+              <textarea placeholder="Your Message"></textarea>
+            </form>
+            <h3>Verification</h3>
+            <form>
+              <label className="mb-2">"Please enter any two digits"</label>
+              <input type="text" />
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <Footer />
+    </div>
+  );
+};
+
+export default Contact;

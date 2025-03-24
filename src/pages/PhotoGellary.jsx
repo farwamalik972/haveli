@@ -1,83 +1,67 @@
 import React, { useEffect, useState } from "react";
+import { Container, Row, Col } from "react-bootstrap";
+import haveli1 from "../Images/havil1.jpg";
+import haveli2 from "../Images/haveli2.jpg";
+import haveli3 from "../Images/haveli3.jpg";
+import haveli4 from "../Images/haveli4.jpg";
+import haveli5 from "../Images/haveli5.jpg"
 import MainNav from "../Components/MainNav";
 import Footer from "../Components/Footer";
-import axios from "axios";
-import config from "../config";
+import CustomNavbar from "../Components/CustomNavbar";
 
-function PhotoGallery() {
-  const [photoGallery, setPhotoGallery] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
+
+const images = [
+  haveli1,
+  haveli2,
+  haveli3,
+  haveli4,
+  haveli5,
+  haveli1,
+  haveli2,
+  haveli3,
+  haveli4,
+  haveli5,
+  haveli1,
+  haveli3,
+  haveli4,
+  haveli2,
+  haveli5,
+  
+];
+
+const PhotoGellary = () => {
+  const [scroll, setScroll] = useState(0);
 
   useEffect(() => {
-    axios
-      .get(`${config.API_BASE_URL}/api/gallery`)
-      .then((response) => {
-        console.log("API Response:", response.data); // ✅ Debugging ke liye
-  
-        if (response.data) {
-          // ✅ Sirf image fields ko extract kar ke ek array banayenge
-          const images = Object.keys(response.data)
-            .filter((key) => key.startsWith("image_")) // Sirf "image_1", "image_2", etc. lo
-            .map((key) => response.data[key]); // Values extract karo
-  
-          setPhotoGallery(images);
-        }
-      })
-      .catch((error) => {
-        console.error("Error fetching data:", error);
-        setError("Failed to load gallery.");
-      })
-      .finally(() => setLoading(false));
+    const handleScroll = () => {
+      setScroll(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  
-
-  // Function to get full image path
-  const getImagePath = (imageSrc) => {
-    if (!imageSrc) return "/placeholder.jpg"; // Fallback image
-    return `${config.STORAGE_URL}/${imageSrc.replace(/^\/+/, "")}`;
-  };
 
   return (
-    <>
-      <div className="photo-gallery-wrapper">
-        <MainNav />
-        <h2 className="text-center my-4">Our Gallery</h2>
-
-        {loading ? (
-          <p className="text-center">Loading images...</p>
-        ) : error ? (
-          <p className="text-center text-danger">{error}</p>
-        ) : (
-          <div className="masonry-grid p-5">
-           {photoGallery.length > 0 ? (
-      <div className="masonry-grid">
-    {photoGallery.map((imageSrc, index) => (
-      <div key={index} className="grid-item medium">
-        <a href={getImagePath(imageSrc)} target="_blank" rel="noopener noreferrer">
-          <img
-            src={getImagePath(imageSrc)}
-            alt={`Gallery ${index + 1}`}
-            loading="lazy"
-            onError={(e) => (e.target.src = "/placeholder.jpg")}
-          />
-        </a>
-        <div className="overlay">
-          <p>Haveli Restaurant</p>
-        </div>
-      </div>
-    ))}
-  </div>
-) : (
-  <p className="text-center">No images available</p>
-)}
-
-          </div>
-        )}
-      </div>
-      <Footer />
-    </>
+    <div className="photo-galry-wrapper">
+      <MainNav/>
+    <Container fluid className="parallax-container mt-5">
+      <Row className="parallax-section">
+        <h2 className="gallery-title">Image Gallery</h2>
+        <Col className="parallax-images">
+          {images.map((img, idx) => (
+            <div
+              key={idx}
+              className={`gallery-item ${idx % 3 === 1 ? "parallax-effect" : ""}`}
+              style={{ height: idx % 2 === 0 ? "250px" : "300px", transform: idx % 3 === 1 ? `translateY(${scroll * -0.1}px)` : "none" }}
+            >
+              <img src={img} alt={`Gallery ${idx}`} />
+            </div>
+          ))}
+        </Col>
+      </Row>
+    </Container>
+    <Footer/>
+    </div>
   );
-}
+};
 
-export default PhotoGallery;
+export default PhotoGellary;

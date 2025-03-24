@@ -1,82 +1,83 @@
-import React from "react";
-import { Carousel } from "react-bootstrap";
-import { FaArrowLeft, FaArrowRight } from "react-icons/fa"; // Icons for navigation
-import slide1 from "../Images/slide-1.jpg";
-import slide2 from "../Images/slide-2.jpg";
-import slide3 from "../Images/slide-3.jpg";
-import slide4 from "../Images/slide-4.jpg";
+import React, { useState, useEffect } from "react";
+import slide1 from "../../src/Images/slide-1.jpg"
+import slide2 from "../../src/Images/slide-2.jpg"
+import slide3 from "../../src/Images/slide-3.jpg"
+import slide4 from "../../src/Images/slide-4.jpg"
+import slide5 from "../../src/Images/slide-5.jpg"
+import slide6 from "../../src/Images/slide-6.jpg"
+import { Container } from "react-bootstrap";
+
+const slidesData = [
+  {
+    heading: "Welcom to Haveli resturant",
+    image: slide1,
+  },
+  {
+    heading: "Welcom to Haveli resturant",
+    image: slide2,
+  },
+  {
+    heading: "Welcom to Haveli resturant",
+    image: slide3,
+  },
+  {
+    heading: "Welcom to Haveli resturant",
+    image: slide4,
+  },
+  {
+    heading: "Welcom to Haveli resturant",
+    image: slide1,
+  },
+  {
+    heading: "Welcom to Haveli resturant",
+    image: slide5,
+  },
+  {
+    heading: "Welcom to Haveli resturant",
+    image: slide6,
+  },
+];
+
 
 const HomeBanner = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const numOfSlides = slidesData.length;
+
+  const goToSlide = (index) => {
+    if (index < 0) index = numOfSlides - 1;
+    if (index >= numOfSlides) index = 0;
+    setActiveIndex(index);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      goToSlide(activeIndex + 1);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, [activeIndex]);
+
   return (
-    <div className="home-page-banner">
-      <Carousel
-        className="custom-carousel"
-        interval={5000}
-        pause="hover"
-        prevIcon={<FaArrowLeft className="custom-arrow custom-prev" size={40} />}
-        nextIcon={<FaArrowRight className="custom-arrow custom-next" size={40} />}
-        slide
-      >
-        {/* Slide 1 */}
-        <Carousel.Item>
-          <img
-            className="d-block w-100 carousel-image"
-            src={slide1}
-            alt="First slide"
-          />
-          <Carousel.Caption className="carousel-text">
-            <div className="carousel-text-inner">
-              <h1 className="slide-title">Welcome to Haveli Restaurant, Lahore!</h1>
-              {/* <p className="slide-description">The BEST Pakistani cuisine in the town.</p> */}
+    <div className="slider">
+      <div className="slider__slides">
+        {slidesData.map((slide, index) => (
+          <div
+            key={index}
+            className={`slide ${index === activeIndex ? "s--active" : ""}`}
+            style={{ backgroundImage: `url(${slide.image})` }}
+          >
+            <div className="slide__inner">
+              <div className="slide__content">
+                {/* <h2 className="slide__heading">{slide.heading}</h2> */}
+                <Container fluid className="main d-flex justify-content-center align-items-center">
+      <h2 className="first">Welcom to Haveli resturant</h2>
+      <h2 className="second">Welcom to Haveli resturant</h2>
+    </Container>
+              </div>
             </div>
-          </Carousel.Caption>
-        </Carousel.Item>
-
-        {/* Slide 2 */}
-        <Carousel.Item>
-          <img
-            className="d-block w-100 carousel-image"
-            src={slide2}
-            alt="Second slide"
-          />
-          <Carousel.Caption className="carousel-text">
-            <div className="carousel-text-inner">
-              <h1 className="slide-title">Welcome to Haveli Restaurant, Lahore!</h1>
-              {/* <p className="slide-description">The BEST Pakistani cuisine in the town.</p> */}
-            </div>
-          </Carousel.Caption>
-        </Carousel.Item>
-
-        {/* Slide 3 */}
-        <Carousel.Item>
-          <img
-            className="d-block w-100 carousel-image"
-            src={slide3}
-            alt="Third slide"
-          />
-          <Carousel.Caption className="carousel-text">
-            <div className="carousel-text-inner">
-              <h1 className="slide-title">Welcome to Haveli Restaurant, Lahore!</h1>
-              {/* <p className="slide-description">The BEST Pakistani cuisine in the town. </p> */}
-            </div>
-          </Carousel.Caption>
-        </Carousel.Item>
-
-        {/* Slide 4 */}
-        <Carousel.Item>
-          <img
-            className="d-block w-100 carousel-image"
-            src={slide4}
-            alt="Fourth slide"
-          />
-          <Carousel.Caption className="carousel-text">
-            <div className="carousel-text-inner">
-              <h1 className="slide-title">Welcome to Haveli Restaurant, Lahore!</h1>
-              {/* <p className="slide-description">The BEST Pakistani cuisine in the town. </p> */}
-            </div>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
