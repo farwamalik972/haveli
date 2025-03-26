@@ -593,7 +593,6 @@ const Menu = () => {
     <div className="menu-wrapper">
       <MainNav />
       <Container className="menu-section mb-5">
-        <h2 className="menu-title">Our Menu</h2>
 
         {/* Category Tabs */}
         <Row>
@@ -613,6 +612,7 @@ const Menu = () => {
           <Col lg={9}>
             <Row>
               <AnimatePresence mode="wait">
+              <h2 className="menu-title">Our Menu</h2>
                 {menuData[activeCategory].map((item, index) => (
                   <div key={index} className="menu-item">
                     <motion.div

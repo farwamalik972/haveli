@@ -343,6 +343,27 @@ body {
       );
     }
   }
+  .typewriter-container {
+    text-align: center;
+    font-size: 50px;
+    background-image: linear-gradient(
+      -225deg,
+      #231557 0%,
+      #44107a 29%,
+      #ff1361 67%,
+      #fff800 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+  }
+  
+  @keyframes textclip {
+    to {
+      background-position: 200% center;
+    }
+  }
   
   
 }
@@ -1496,278 +1517,6 @@ $nav-arrow-border: 2px;
 $nav-arrow-radius: 30px;
 $nav-arrow-spacing: 10px;
 
-// .open-sky-wraper {
-//     .header {
-//       width: 100%;
-//       height: 100vh;
-//       background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-//         url('./Images/rof.jpg');
-//       background-repeat: no-repeat;
-//       background-size: cover;
-//       background-position: center;
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-//     }
-//     @media (max-width: 768px) {
-//         .header {
-//             height: 45vh !important;
-//         }
-//         .header-text{
-//             font-size: 40px !important;
-//         }
-//       }
-  
-//     .header-text {
-//       font-size: 50px;
-//       font-weight: 700;
-//       color: #fff;
-//       letter-spacing: 1px;
-//       text-align: center;
-//     }
-  
-//     .fifty-fifty-slider {
-//       border-radius: $general-radius;
-//       min-height: 397px;
-//       padding: 0;
-//       display: flex;
-//       margin: 50px auto;
-//       overflow: hidden;
-//       list-style: none;
-//       position: relative;
-//       align-items: stretch;
-//       font-family: "Nunito";
-//       transition: all 0s ease-in-out;
-  
-//       .slider-wrapper {
-//         display: flex;
-//         flex-direction: column;
-//         width: 100%;
-//         position: relative;
-//       }
-  
-//       .slider-stack {
-//         display: flex;
-//         position: relative;
-//         width: 100%;
-//         padding: 0;
-//         transition: all 0.3s ease-in-out;
-//         list-style: none;
-  
-//         .slider-slide {
-//           height: 100%;
-//           min-height: 350px;
-//           position: absolute;
-//           width: 100%;
-//           display: flex;
-//           user-select: none;
-//           pointer-events: none;
-//           box-sizing: border-box;
-//           transform: all 0.3s ease-in-out;
-  
-//           &.active {
-//             .slider-content {
-//               transform: translateX(0%);
-//             }
-//             .slider-image {
-//               transform: translateX(0%);
-//             }
-//           }
-  
-//           .slider-content,
-//           .slider-image {
-//             width: 50%;
-//             flex: 0 1 auto;
-//             position: relative;
-//             pointer-events: auto;
-//             box-sizing: border-box;
-//           }
-  
-//           .slider-content {
-//             z-index: 2;
-//             display: flex;
-//             flex-direction: column;
-//             justify-content: center;
-//             padding: $content-padding;
-//             transform: translateX(-100%);
-//             transition: transform 0.6s ease-in-out;
-//              background-color: #1b1b1b;
-//              padding: 0px 50px;
-
-//             .slider-title {
-//               color: $content-title-color;
-//               font-size: $content-title-size;
-//               line-height: $content-title-line;
-//               margin-bottom: $content-title-spacing;
-//             }
-//             .slider-text {
-//                 color: white;
-//               p {
-//                 color: white;
-//                 font-size: $content-text-size;
-//                 line-height: $content-text-line;
-//                 margin-top: $content-text-spacing;
-//               }
-//             }
-//             .slider-action {
-//               color: $content-action-color;
-//               font-size: $content-action-size;
-//               padding: $content-action-padding;
-//               border: $content-action-border solid;
-//               background: $content-action-background;
-//               border-radius: $content-action-radius;
-//               border-color: $content-action-border-color;
-//               display: inline-block;
-//               box-sizing: border-box;
-//               text-decoration: none;
-//               transition: all 0.3s ease;
-//               &:hover {
-//                 color: $content-action-hover-color;
-//                 background: $content-action-hover-background;
-//                 border-color: $content-action-hover-border-color;
-//               }
-//             }
-//           }
-  
-//           .slider-image {
-//             z-index: 1;
-//             transform: translateX(100%);
-//             transition: transform 0s 0.3s ease-in-out;
-//           }
-//         }
-//       }
-  
-//       .slider-nav {
-//         position: absolute;
-//         bottom: 45px;
-//         display: flex;
-//         width: 50%;
-//         justify-content: flex-end;
-//         padding: 10px 20px;
-//         z-index: 99999;
-  
-//         .slider-nav-count {
-//           font-size: $nav-count-size;
-//           margin-right: auto;
-//           color: white;
-//         }
-  
-//         .prev,
-//         .next {
-//           width: 60px;
-//           height: 45px !important;
-//           border-radius: $nav-arrow-radius;
-//           border: $nav-arrow-border solid white;
-//           opacity: 0.5;
-//           display: flex;
-//           color: inherit;
-//           line-height: 0;
-//           cursor: pointer;
-//           align-items: center;
-//           justify-content: center;
-//           transition: all 0.3s ease-in-out;
-//           color: white !important;
-  
-//           &:hover {
-//             opacity: 1;
-//           }
-//           &:first-of-type {
-//             margin-right: $nav-arrow-spacing;
-//           }
-//         }
-//       }
-//     }
-//     .reservation-card-container {
-//         padding: 20px;
-      
-//         .reservation-card {
-//           border-radius: 12px;
-//           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-//           border: 1px solid #ddd;
-          
-//           .card-title {
-//             font-size: 25px;
-//             font-weight: 700;
-//             margin-bottom: 20px;
-//             color: #373838;
-//           }
-//        form{
-//         .form-label{
-//             font-size: 15px;
-//             font-weight: 500;
-//         }
-//        }
-//           .form-control {
-//             margin-bottom: 15px;
-//             border-radius: 8px;
-//             background-color: #f1f1f1;
-//             border: 1px solid #c3ddf0;
-//             font-size: 14px;
-//             height: 45px;
-      
-//             &:focus {
-//               outline: none;
-//               box-shadow: none;
-//               border-color: #525353;
-//             }
-//           }
-      
-//           .submit-btn {
-//             width: 100%;
-//             margin-top: 10px;
-//             padding: 10px;
-//             background-color: black;
-//             border: none;
-//             font-weight: bold;
-//             border-radius: 12px;
-//             max-width: 250px;
-      
-//             &:hover {
-//               background-color: #525353;
-//             }
-//           }
-//         }
-      
-//         .operating-hours {
-//           background-color: #f8f9fa;
-//           padding: 20px;
-//           border-radius: 12px;
-//           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      
-//           h5 {
-//             font-size: 25px;
-//             font-weight: 700;
-//             color: #373838;
-//           }
-      
-//           h6 {
-//             font-size: 17px;
-//             font-weight: bold;
-//             margin-top: 24px;
-//             color: #525353;
-//             text-align: center;
-//           }
-      
-//           .timing-row, .slots, .price-row {
-//             display: flex;
-//             justify-content: space-around;
-//             background: #e9ecef;
-//             padding: 10px;
-//             border-radius: 8px;
-//             font-size: 15px;
-//             font-weight: 500;
-//             color: #525353;
-//             margin-top: 8px;
-//           }
-      
-//           .centered-text {
-//             text-align: center;
-//             font-weight: bold;
-//             margin-bottom: 8px;
-//           }
-//         }
-//       }    
-//   }
 .open-to-sky {
   color: #fff;
 
@@ -2252,6 +2001,7 @@ label{
       margin-bottom: 20px;
       text-transform: uppercase;
       color: #c0392b;
+      text-align: justify;
     }
 
     /* Tabs */
@@ -2391,6 +2141,26 @@ label{
 
       &:hover {
         background: #c0392b;
+      }
+    }
+  }
+  @media (max-width: 768px) {
+    .menu-item{
+      .menu-img{
+        width: 90px !important;
+        height: 90px !important;
+      }
+      .menu-content{
+        .menu-title{
+          font-size: 12px !important;
+        }
+        .soup-list{
+          padding: 0 !important;
+          .soup-item{
+            font-size: 12px !important;
+
+          }
+        }
       }
     }
   }
@@ -4487,11 +4257,6 @@ p.signed {
           font-weight: bold;
         }
       }
-    }
-
-    // Reverse Section Styling
-    .reverse {
-      // flex-direction: row-reverse;
     }
   }
 }
