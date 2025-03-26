@@ -71,9 +71,7 @@ const About = () => {
             <Col md={6} className="content">
               <h2 className="section-title">Our Goals & History</h2>
               <p>
-                Haveli Restaurant is located in the historic Haveli Khalil Khan, which is an architectural
-                landmark of the Fort Road Food Street in Lahore. Nestled in the lap of history, Haveli offers
-                incomparable and outstanding views of famous sites like the Badshahi Mosque, Lahore Fort, and more.
+                {about.description}
               </p>
               <div className="info-section">
                 <img src={glass} alt="Dining" className="small-image" />

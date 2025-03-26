@@ -68,7 +68,7 @@ function Home() {
         </Container>
       </section> */}
       <Container className='page-content'>
-        <h2 className='page-heading mb-5'>Atmospheric Imagery</h2>
+        <h2 className='page-heading mb-5'>{restaurantData.atmospheric_imager_heading}</h2>
         <Row>
           {cardData.map((card, index) => (
             <Col md={4} key={index} className='mb-4'>
