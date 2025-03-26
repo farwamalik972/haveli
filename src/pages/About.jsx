@@ -60,7 +60,6 @@ const About = () => {
           <h1>{about.about_heading}</h1>
         </div>
       </div>
-
       <section className="about-us">
         <Container>
           <Row className="align-items-center">

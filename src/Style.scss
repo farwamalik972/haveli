@@ -2097,7 +2097,7 @@ $nav-arrow-spacing: 10px;
         /* Info Items with Icons */
         .info-item {
           display: flex;
-          align-items: center;
+          // align-items: center;
           gap: 10px;
           font-size: 16px;
           color: #333;
@@ -2240,67 +2240,7 @@ label{
     }
   }
 }
-
 // menu scss start here
-// .menu-wrapper {
-//   overflow: hidden;
-//   .menu-page {
-//     padding: 120px 0px;
-//     h2{
-//       font-size: 45px;
-//       font-weight: 700;
-//     }
-//   }
-//   .pdf-section {
-//     .menu-card {
-//       border-radius: 10px;
-//       overflow: hidden;
-//       box-shadow: none;
-//       border: none;
-//       width: 100%;
-//     }
-
-//     .menu-card-body {
-//       padding: 0;
-//     }
-
-//     .menu-embed {
-//       width: 100%;
-//       height: 100vh;
-//       border: none;
-//     }
-//   }
-
-//   .gallery-section {
-//     text-align: center;
-
-//     .gallery-title {
-//       margin-bottom: 15px;
-//       color: #333;
-//     }
-
-//     .gallery-grid {
-//       display: grid;
-//       grid-template-columns: repeat(2, 1fr);
-//       gap: 10px;
-
-//       .gallery-image {
-//         width: 100%;
-//         height: auto;
-//         min-height: 100px;
-//         object-fit: cover;
-//       }
-//     }
-//     .menu-logo{
-//       img{
-//         width: 100%;
-//         height: 100%;
-//         object-fit: cover;
-//       }
-     
-//     }
-//   }
-// }
 .menu-wrapper {
   .menu-section {
     text-align: center;
@@ -2319,18 +2259,21 @@ label{
       display: flex;
       justify-content: center;
       margin-bottom: 30px;
+      flex-direction: column;
+      gap: 20px;
 
       .menu-tab {
         background: transparent;
-        border: none;
+        border: 1px solid #c0392b;
         font-size: 16px;
         font-weight: 600;
         color: #333;
         margin: 0 10px;
-        padding: 5px 15px;
+        padding: 8px 15px;
         cursor: pointer;
         transition: 0.3s;
         border-radius: 5px;
+        text-align: justify;
 
         &.active {
           background: black;
@@ -2346,7 +2289,7 @@ label{
     /* Menu Items */
     .menu-item {
       display: flex;
-      align-items: center;
+      // align-items: center;
       margin-bottom: 20px;
       padding: 15px;
       transition: 0.3s;
@@ -2356,9 +2299,9 @@ label{
       animation: fadeIn 0.5s ease-in-out forwards;
       gap: 20px;
 
-      &:nth-child(even) {
-        flex-direction: row-reverse;
-      }
+      // &:nth-child(even) {
+      //   flex-direction: row-reverse;
+      // }
 
       @keyframes fadeIn {
         from {
@@ -2403,20 +2346,27 @@ label{
           justify-content: space-between;
           align-items: center;
           font-size: 18px;
+          p{
+            font-size: 14px;
+    margin-bottom: 0;
+    font-weight: 700;
+          }
 
           .menu-price {
             font-weight: 600;
             font-size: 20px;
             color: #c0392b;
           }
+         
         }
 
-        .menu-description {
-          font-size: 14px;
-          margin-bottom: 5px;
-          color: #666;
+        .soup-list{
+        .soup-item{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
         }
-
+        }
         /* Dotted Border */
         .menu-border {
           border-bottom: 2px dashed #c0392b;
