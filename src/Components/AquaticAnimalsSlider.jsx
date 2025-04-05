@@ -34,7 +34,7 @@ const AquaticAnimalsSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <Container fluid className="aquatic-slider">
+    <Container fluid className="aquatic-slider mb-5">
       <Row className="align-items-center">
         {/* Left Side Text Content */}
         <Col md={6} className="text-content" style={{paddingLeft:"75px"}}>

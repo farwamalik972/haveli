@@ -2190,9 +2190,9 @@ label{
     h1 {
       font-family: "Roboto", sans-serif;
       font-weight: 900;
-      font-size: 32px;
+      font-size: 26px;
       background: linear-gradient(45deg, #d89e76, #ffffff);
-      // -webkit-background-clip: text;
+      -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 

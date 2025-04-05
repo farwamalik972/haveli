@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
  import garden from "../Images/haveli-garden.jpeg";
  import bbq from "../Images/bbq.jpeg"
@@ -6,8 +6,25 @@ import { Container, Row, Col, Button } from "react-bootstrap";
  import event from "../Images/event (3).jpeg"
 import Footer from "../Components/Footer";
 import MainNav from "../Components/MainNav";
+import config from "../config";
+import axios from "axios";
 
 const HaveliGarden = () => {
+   const [gardenData, setgardenData] = useState(null);
+  
+    useEffect(() => {
+      axios
+      .get(`${config.API_BASE_URL}/api/garden`)
+        .then((response) => {
+          setgardenData(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching data:", error);
+        });
+    }, []);
+  
+    if (!gardenData) return <div className="loading"></div>;
+  
   return (
     <div className="haveli-garden">
     <MainNav/>
@@ -15,8 +32,8 @@ const HaveliGarden = () => {
       <section className="immersive-entry">
         <div className="overlay">
           <Container className="text-center text-white">
-            <h1>Welcome to Haveli Garden</h1>
-            <p>A blend of luxury, greenery, and unforgettable experiences</p>
+            <h1>{gardenData.heading_name}</h1>
+            <p>{gardenData.description}</p>
           </Container>
         </div>
       </section>
@@ -26,32 +43,32 @@ const HaveliGarden = () => {
         <Container>
           <Row className="experience-row">
             <Col md={6} className="experience-box reverse">
-              <img src={bbq} alt="Live BBQ" />
+              <img src={gardenData.image_1} alt="Live BBQ" />
               <div className="text-content">
-                <h4>Live BBQ</h4>
-                <p>Enjoy sizzling flavors prepared in an open-air setting.</p>
+                <h4>{gardenData.heading_name_2}</h4>
+                <p>{gardenData.description_2}</p>
               </div>
             </Col>
             <Col md={6} className="experience-box">
               <div className="text-content">
-                <h4>Serene Greenery</h4>
-                <p>Surround yourself with nature’s beauty.</p>
+                <h4>{gardenData.heading_name_3}</h4>
+                <p>{gardenData.description_3}</p>
               </div>
-              <img src={garden} alt="Serene Greenery" />
+              <img src={gardenData.image_2} alt="Serene Greenery" />
             </Col>
             <Col md={6} className="experience-box reverse">
-              <img src={music} alt="Live Music Nights" />
+              <img src={gardenData.image_3} alt="Live Music Nights" />
               <div className="text-content">
-                <h4>Live Music Nights</h4>
-                <p>Soothing tunes in a magical ambiance.</p>
+                <h4>{gardenData.heading_name_4}</h4>
+                <p>{gardenData.heading_name_5}</p>
               </div>
             </Col>
             <Col md={6} className="experience-box">
               <div className="text-content">
-                <h4>Event Celebrations</h4>
-                <p>Host unforgettable birthdays and gatherings.</p>
+                <h4>{gardenData.heading_name_6}</h4>
+                <p>{gardenData.description_6}</p>
               </div>
-              <img src={event} alt="Event Celebrations" />
+              <img src={gardenData.image_4} alt="Event Celebrations" />
             </Col>
           </Row>
         </Container>

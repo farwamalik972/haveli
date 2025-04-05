@@ -50,14 +50,14 @@ const About = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <div>Loading...</div>;
+  if (loading) return <div></div>;
 
   return (
     <div className="about-us-wrapper">
       <MainNav />
       <div className="banner-container mb-4">
         <div className="banner">
-          <h1>{about.about_heading}</h1>
+          <h1>{about.name}</h1>
         </div>
       </div>
       <section className="about-us">
@@ -69,7 +69,7 @@ const About = () => {
               </div>
             </Col>
             <Col md={6} className="content">
-              <h2 className="section-title">Our Goals & History</h2>
+              <h2 className="section-title">{about.about_heading}</h2>
               <p>
                 {about.description}
               </p>

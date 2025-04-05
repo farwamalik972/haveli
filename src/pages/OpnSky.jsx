@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Footer from "../Components/Footer";
 import liveMusic from "../Images/live-music.jpg";
@@ -7,8 +7,26 @@ import menuImage from "../Images/open-menu.jpeg";
 import coupleDinner from "../Images/night-dinner.jpeg";
 import birthdayPackage from "../Images/birthday-pkg.jpeg";
 import MainNav from "../Components/MainNav";
+import axios from "axios";
+import config from "../config";
+
 
 const OpnSky = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    axios
+    .get(`${config.API_BASE_URL}/api/opensky`)
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
+  }, []);
+
+  if (!data) return <div className="loading"></div>;
+
   return (
     <div className="open-to-sky">
  <MainNav/>
@@ -16,34 +34,34 @@ const OpnSky = () => {
       {/* Hero Section */}
       <section className="hero-section">
         <div className="overlay">
-          <h1>Open to Sky</h1>
-          <p>Experience elegance under the stars</p>
+          <h1>{data.heading_name}</h1>
+          <p>{data.description}</p>
         </div>
       </section>
 
       {/* Experience Highlights */}
       <Container className="experience-section">
-        <h2 className="section-title">Experience the Best</h2>
+        <h2 className="section-title">{data.heading_name_1}</h2>
         <Row>
           <Col md={4} className="experience-box mb-3">
-            <img src={liveMusic} alt="Live Music" />
+            <img src={data.image_1} alt="Live Music" />
             <div className="overlay-text">
-              <h3>Live Music</h3>
-              <p>Soulful melodies under the stars</p>
+              <h3>{data.heading_name_2}</h3>
+              <p>{data.description_2}</p>
             </div>
           </Col>
           <Col md={4} className="experience-box mb-3">
-            <img src={menuImage} alt="Exclusive Menu" />
+            <img src={data.image_2} alt="Exclusive Menu" />
             <div className="overlay-text">
-              <h3>Exclusive Menu</h3>
-              <p>Delight in curated rooftop dining</p>
+              <h3>{data.heading_name_3}</h3>
+              <p>{data.description_3}</p>
             </div>
           </Col>
           <Col md={4} className="experience-box mb-3">
-            <img src={romanticAmbiance} alt="Romantic Ambiance" />
+            <img src={data.image_3} alt="Romantic Ambiance" />
             <div className="overlay-text">
-              <h3>Romantic Ambiance</h3>
-              <p>Perfect setting for an unforgettable evening</p>
+              <h3>{data.heading_name_4}</h3>
+              <p>{data.description_4}</p>
             </div>
           </Col>
         </Row>
@@ -51,20 +69,20 @@ const OpnSky = () => {
 
       {/* Special Offers */}
       <Container className="special-offers">
-        <h2 className="section-title">Special Offers</h2>
+        <h2 className="section-title">{data.heading_name_5}</h2>
         <Row>
           <Col md={6} className="offer-box mb-3">
-            <img src={birthdayPackage} alt="Birthday Packages" />
+            <img src={data.image_4} alt="Birthday Packages" />
             <div className="offer-text">
-              <h3>Birthday Packages</h3>
-              <p>Celebrate your special day in style</p>
+              <h3>{data.heading_name_6}</h3>
+              <p>{data.description_6}</p>
             </div>
           </Col>
           <Col md={6} className="offer-box mb-3">
-            <img src={coupleDinner} alt="Couple Dinners" />
+            <img src={data.image_5} alt="Couple Dinners" />
             <div className="offer-text">
-              <h3>Dinners</h3>
-              <p>Romantic evening under the sky</p>
+              <h3>{data.heading_name_7}</h3>
+              <p>{data.description_7}</p>
             </div>
           </Col>
         </Row>

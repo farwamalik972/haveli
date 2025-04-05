@@ -26,7 +26,7 @@ function Home() {
   }, []);
 
   if (loading || !restaurantData) {
-    return <div>Loading...</div>;
+    return <div></div>;
   }
 
   const cardData = [
