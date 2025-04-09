@@ -9,31 +9,31 @@ import { Container } from "react-bootstrap";
 
 const slidesData = [
   {
-    heading: "Welcom to Haveli resturant",
+    heading: "Welcome to Haveli Restaurant, Lahore!",
     image: slide1,
   },
   {
-    heading: "Welcom to Haveli resturant",
+    heading: "Welcome to Haveli Restaurant, Lahore!",
     image: slide2,
   },
   {
-    heading: "Welcom to Haveli resturant",
+    heading: "Welcome to Haveli Restaurant, Lahore!",
     image: slide3,
   },
   {
-    heading: "Welcom to Haveli resturant",
+    heading: "Welcome to Haveli Restaurant, Lahore!",
     image: slide4,
   },
   {
-    heading: "Welcom to Haveli resturant",
+    heading: "Welcome to Haveli Restaurant, Lahore!",
     image: slide1,
   },
   {
-    heading: "Welcom to Haveli resturant",
+    heading: "Welcome to Haveli Restaurant, Lahore!",
     image: slide5,
   },
   {
-    heading: "Welcom to Haveli resturant",
+    heading: "Welcome to Haveli Restaurant, Lahore!",
     image: slide6,
   },
 ];
@@ -70,8 +70,8 @@ const HomeBanner = () => {
               <div className="slide__content">
                 {/* <h2 className="slide__heading">{slide.heading}</h2> */}
                 <Container fluid className="main d-flex justify-content-center align-items-center">
-      <h2 className="first">Welcom to Haveli resturant</h2>
-      <h2 className="second">Welcom to Haveli resturant</h2>
+      <h2 className="first">Welcome to Haveli Restaurant, Lahore!</h2>
+      <h2 className="second">Welcome to Haveli Restaurant, Lahore!</h2>
     </Container>
               </div>
             </div>

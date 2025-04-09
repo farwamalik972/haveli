@@ -50,7 +50,7 @@ function Home() {
       <MainNav />
       <HomeBanner />
       <div className='welcom-wrapper'>
-        <h2>{restaurantData.heading_name}</h2>
+        <h2>{restaurantData.name}</h2>
         <div dangerouslySetInnerHTML={{ __html: restaurantData.description}}></div>
       </div>
       {/* <section className='black-section-bg mb-5'>
