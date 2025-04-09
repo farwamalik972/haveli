@@ -2,12 +2,11 @@ import React from "react";
 import { Container, Row, Col, Card, Carousel } from "react-bootstrap";
 import CustomNavbar from "../Components/CustomNavbar";
 import Footer from "../Components/Footer";
-import gallery1 from "../Images/barood.JPG";
-import gallery2 from "../Images/barood-1.JPG";
-import gallery3 from "../Images/barood 2.JPG";
-import offer1 from "../Images/barood 3.JPG";
+import gallery1 from "../Images/barood.png";
+import gallery2 from "../Images/barood1.png";
+import gallery3 from "../Images/barood2.png";
+import offer1 from "../Images/barood3.png";
 import MainNav from "../Components/MainNav";
-// import offer2 from "../Images/barood5.JPG";
 
 const BaroodKhana = () => {
   return (
@@ -70,6 +69,7 @@ const BaroodKhana = () => {
           </div>
         </Container>
       </section>
+      
 
       <Footer />
     </div>

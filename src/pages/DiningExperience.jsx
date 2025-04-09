@@ -100,10 +100,8 @@ function DiningExperience() {
 
             {/* Center Content */}
             <Col md={4} className="text-content text-center">
-              <h2>THE HOME OF LIVE MUSIC, COCKTAILS & GOOD TIMES</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              </p>
+              <h2>{heading_3}</h2>
+              <p>{description_3}</p>
              <ButtonWithHover/>
             </Col>
 

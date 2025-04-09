@@ -2004,6 +2004,15 @@ label{
       text-align: justify;
     }
 
+    .menu-title-api {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      color:black;
+      text-align: justify;
+    }
+
     /* Tabs */
     .menu-tabs {
       display: flex;
@@ -2101,6 +2110,27 @@ label{
     margin-bottom: 0;
     font-weight: 700;
           }
+          
+
+          .menu-price {
+            font-weight: 600;
+            font-size: 20px;
+            color: #c0392b;
+          }
+         
+        }
+        .menu-title-api {
+          font-weight: 700;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          font-size: 18px;
+          p{
+            font-size: 14px;
+    margin-bottom: 0;
+    font-weight: 700;
+          }
+          
 
           .menu-price {
             font-weight: 600;
@@ -2152,6 +2182,9 @@ label{
       }
       .menu-content{
         .menu-title{
+          font-size: 12px !important;
+        }
+        .menu-title-api{
           font-size: 12px !important;
         }
         .soup-list{

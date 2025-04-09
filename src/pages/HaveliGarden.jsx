@@ -43,7 +43,7 @@ const HaveliGarden = () => {
         <Container>
           <Row className="experience-row">
             <Col md={6} className="experience-box reverse">
-              <img src={gardenData.image_1} alt="Live BBQ" />
+              <img  src={`${config.STORAGE_URL}/${gardenData.image_1}`} alt="Live BBQ" />
               <div className="text-content">
                 <h4>{gardenData.heading_name_2}</h4>
                 <p>{gardenData.description_2}</p>
@@ -54,13 +54,13 @@ const HaveliGarden = () => {
                 <h4>{gardenData.heading_name_3}</h4>
                 <p>{gardenData.description_3}</p>
               </div>
-              <img src={gardenData.image_2} alt="Serene Greenery" />
+              <img src={`${config.STORAGE_URL}/${gardenData.image_2}`} alt="Serene Greenery" />
             </Col>
             <Col md={6} className="experience-box reverse">
-              <img src={gardenData.image_3} alt="Live Music Nights" />
+              <img src={`${config.STORAGE_URL}/${gardenData.image_3}`} alt="Live Music Nights" />
               <div className="text-content">
                 <h4>{gardenData.heading_name_4}</h4>
-                <p>{gardenData.heading_name_5}</p>
+                <p>{gardenData.description_4}</p>
               </div>
             </Col>
             <Col md={6} className="experience-box">
@@ -68,7 +68,7 @@ const HaveliGarden = () => {
                 <h4>{gardenData.heading_name_6}</h4>
                 <p>{gardenData.description_6}</p>
               </div>
-              <img src={gardenData.image_4} alt="Event Celebrations" />
+              <img src={`${config.STORAGE_URL}/${gardenData.image_4}`} alt="Event Celebrations" />
             </Col>
           </Row>
         </Container>

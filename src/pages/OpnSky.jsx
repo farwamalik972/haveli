@@ -44,21 +44,21 @@ const OpnSky = () => {
         <h2 className="section-title">{data.heading_name_1}</h2>
         <Row>
           <Col md={4} className="experience-box mb-3">
-            <img src={data.image_1} alt="Live Music" />
+            <img  src={`${config.STORAGE_URL}/${data.image_1}`} alt="Live Music" />
             <div className="overlay-text">
               <h3>{data.heading_name_2}</h3>
               <p>{data.description_2}</p>
             </div>
           </Col>
           <Col md={4} className="experience-box mb-3">
-            <img src={data.image_2} alt="Exclusive Menu" />
+            <img src={`${config.STORAGE_URL}/${data.image_2}`} alt="Exclusive Menu" />
             <div className="overlay-text">
               <h3>{data.heading_name_3}</h3>
               <p>{data.description_3}</p>
             </div>
           </Col>
           <Col md={4} className="experience-box mb-3">
-            <img src={data.image_3} alt="Romantic Ambiance" />
+            <img src={`${config.STORAGE_URL}/${data.image_3}`} alt="Romantic Ambiance" />
             <div className="overlay-text">
               <h3>{data.heading_name_4}</h3>
               <p>{data.description_4}</p>
@@ -72,14 +72,14 @@ const OpnSky = () => {
         <h2 className="section-title">{data.heading_name_5}</h2>
         <Row>
           <Col md={6} className="offer-box mb-3">
-            <img src={data.image_4} alt="Birthday Packages" />
+            <img src={`${config.STORAGE_URL}/${data.image_4}`} alt="Birthday Packages" />
             <div className="offer-text">
               <h3>{data.heading_name_6}</h3>
               <p>{data.description_6}</p>
             </div>
           </Col>
           <Col md={6} className="offer-box mb-3">
-            <img src={data.image_5} alt="Couple Dinners" />
+            <img src={`${config.STORAGE_URL}/${data.image_5}`} alt="Couple Dinners" />
             <div className="offer-text">
               <h3>{data.heading_name_7}</h3>
               <p>{data.description_7}</p>
