@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
 import slide1 from "../../src/Images/slide-1.jpg"
-import slide2 from "../../src/Images/slide-2.jpg"
+import slide2 from "../../src/Images/saltant-galry1.jpeg"
 import slide3 from "../../src/Images/slide-3.jpg"
 import slide4 from "../../src/Images/slide-4.jpg"
 import slide5 from "../../src/Images/slide-5.jpg"
 import slide6 from "../../src/Images/slide-6.jpg"
+import slide8 from "../../src/Images/mughal.jpeg"
+import slide9 from "../../src/Images/garden3.jpeg"
+import slide10 from "../../src/Images/opnhaveli.jpeg"
+
 import { Container } from "react-bootstrap";
 
 const slidesData = [
@@ -35,6 +39,18 @@ const slidesData = [
   {
     heading: "Welcome to Haveli Restaurant, Lahore!",
     image: slide6,
+  },
+  {
+    heading: "Welcome to Haveli Restaurant, Lahore!",
+    image: slide8,
+  },
+  {
+    heading: "Welcome to Haveli Restaurant, Lahore!",
+    image: slide9,
+  },
+  {
+    heading: "Welcome to Haveli Restaurant, Lahore!",
+    image: slide10,
   },
 ];
 
@@ -70,9 +86,9 @@ const HomeBanner = () => {
               <div className="slide__content">
                 {/* <h2 className="slide__heading">{slide.heading}</h2> */}
                 <Container fluid className="main d-flex justify-content-center align-items-center">
-      <h2 className="first">Welcome to Haveli Restaurant, Lahore!</h2>
-      <h2 className="second">Welcome to Haveli Restaurant, Lahore!</h2>
-    </Container>
+                  <h2 className="first">Welcome to Haveli Restaurant, Lahore!</h2>
+                  <h2 className="second">Welcome to Haveli Restaurant, Lahore!</h2>
+                </Container>
               </div>
             </div>
           </div>

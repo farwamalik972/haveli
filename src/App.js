@@ -24,6 +24,10 @@ import MughalRoom from "./pages/MughalRoom";
 import RajRoom from "./pages/RajRoom";
 import SammarPalace from "./pages/SammarPalace";
 import NikkahGallery from "./pages/NikkahGallery";
+import EventDecor from "./pages/EventDeco";
+import CorporateEventDecor from "./pages/CorporateEventDecor";
+import OffPremisesCatering from "./pages/OffPremisesCatering";
+import WalledCityTours from "./pages/WalledCityTours";
 
 function App() {
   return (
@@ -53,6 +57,10 @@ function App() {
         <Route path="/raj" element={<RajRoom/>} />
         <Route path="/sammr" element={<SammarPalace/>} />
         <Route path="/nikha" element={<NikkahGallery/>} />
+        <Route path="/event" element={<EventDecor/>} />
+        <Route path="/corporateevent" element={<CorporateEventDecor/>} />
+        <Route path="/offpremises" element={<OffPremisesCatering/>} />
+        <Route path="/citytours" element={<WalledCityTours/>} />
       </Routes>
     </Router>
   );

@@ -101,58 +101,58 @@ Thank you for choosing Haveli Restaurant. Whether you are here for a special occ
           transition={{ duration: 1 }}
         >Meet Our Team <span className="underline"></span></motion.h2>
         <Row className="justify-content-center">
-  {/* First Row - 2 Cards Centered */}
-  {teamMembers.slice(0, 2).map((member, index) => (
-    <Col md={5} sm={6} xs={12} key={index} className="team-card-col" data-aos="flip-left">
-      <Card className="team-card">
-        <div className="photo-wrapper">
-          <div className="background-overlay"></div>
-          <Card.Img variant="top" src={member.photo} className="team-photo" />
-        </div>
-        <Card.Body>
-          <Card.Title>{member.name}</Card.Title>
-          <p className="limited-text">{member.description.split(" ").slice(0, 25).join(" ") + "..."}</p>
-        </Card.Body>
-      </Card>
-    </Col>
-  ))}
+          {/* First Row - 2 Cards Centered */}
+          {teamMembers.slice(0, 2).map((member, index) => (
+            <Col md={5} sm={6} xs={12} key={index} className="team-card-col" data-aos="flip-left">
+              <Card className="team-card">
+                <div className="photo-wrapper">
+                  <div className="background-overlay"></div>
+                  <Card.Img variant="top" src={member.photo} className="team-photo" />
+                </div>
+                <Card.Body>
+                  <Card.Title>{member.name}</Card.Title>
+                  <p className="limited-text">{member.description.split(" ").slice(0, 25).join(" ") + "..."}</p>
+                </Card.Body>
+              </Card>
+            </Col>
+          ))}
 
-  {/* Second Row - 3 Cards */}
-  <Row className="justify-content-center">
-    {teamMembers.slice(2, 5).map((member, index) => (
-      <Col md={4} sm={6} xs={12} key={index} className="team-card-col" data-aos="flip-left">
-        <Card className="team-card">
-          <div className="photo-wrapper">
-            <div className="background-overlay"></div>
-            <Card.Img variant="top" src={member.photo} className="team-photo" />
-          </div>
-          <Card.Body>
-            <Card.Title>{member.name}</Card.Title>
-            <p className="limited-text">{member.description.split(" ").slice(0, 25).join(" ") + "..."}</p>
-          </Card.Body>
-        </Card>
-      </Col>
-    ))}
-  </Row>
+          {/* Second Row - 3 Cards */}
+          <Row className="justify-content-center">
+            {teamMembers.slice(2, 5).map((member, index) => (
+              <Col md={4} sm={6} xs={12} key={index} className="team-card-col" data-aos="flip-left">
+                <Card className="team-card">
+                  <div className="photo-wrapper">
+                    <div className="background-overlay"></div>
+                    <Card.Img variant="top" src={member.photo} className="team-photo" />
+                  </div>
+                  <Card.Body>
+                    <Card.Title>{member.name}</Card.Title>
+                    <p className="limited-text">{member.description.split(" ").slice(0, 25).join(" ") + "..."}</p>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
 
-  {/* Third Row - 1 Card Centered */}
-  <Row className="justify-content-center">
-    {teamMembers.slice(5, 6).map((member, index) => (
-      <Col md={4} sm={8} xs={12} key={index} className="team-card-col" data-aos="flip-left">
-        <Card className="team-card">
-          <div className="photo-wrapper">
-            <div className="background-overlay"></div>
-            <Card.Img variant="top" src={member.photo} className="team-photo" />
-          </div>
-          <Card.Body>
-            <Card.Title>{member.name}</Card.Title>
-            <p className="limited-text">{member.description.split(" ").slice(0, 25).join(" ") + "..."}</p>
-          </Card.Body>
-        </Card>
-      </Col>
-    ))}
-  </Row>
-</Row>
+          {/* Third Row - 1 Card Centered */}
+          <Row className="justify-content-center">
+            {teamMembers.slice(5, 6).map((member, index) => (
+              <Col md={4} sm={8} xs={12} key={index} className="team-card-col" data-aos="flip-left">
+                <Card className="team-card">
+                  <div className="photo-wrapper">
+                    <div className="background-overlay"></div>
+                    <Card.Img variant="top" src={member.photo} className="team-photo" />
+                  </div>
+                  <Card.Body>
+                    <Card.Title>{member.name}</Card.Title>
+                    <p className="limited-text">{member.description.split(" ").slice(0, 25).join(" ") + "..."}</p>
+                  </Card.Body>
+                </Card>
+              </Col>
+            ))}
+          </Row>
+        </Row>
 
       </Container>
       <Container fluid className="about-haveli-section">
@@ -194,4 +194,3 @@ Thank you for choosing Haveli Restaurant. Whether you are here for a special occ
 }
 
 export default OurTeam;
- 

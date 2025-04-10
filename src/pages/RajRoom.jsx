@@ -13,7 +13,7 @@ const RajRoom = () => {
         {/* Header Section */}
         <Row className="header text-center">
           <Col>
-            <h1>🏯 The Raj Room</h1>
+            <h1>The Raj Room</h1>
             <p>Experience the elegance of Raj-era architecture and culture.</p>
           </Col>
         </Row>

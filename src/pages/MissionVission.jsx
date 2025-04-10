@@ -32,7 +32,7 @@ function MissionVission() {
       <MainNav />
       <Container className="vision-mission">
         {loading ? (
-          <div className="loading-text">Loading...</div>
+          <div className="loading-text"></div>
         ) : (
           <>
             <section className="our-vision">

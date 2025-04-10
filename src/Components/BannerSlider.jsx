@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import banner from "../Images/dining-1.jpeg";
-import banner1 from "../Images/dining-2.jpeg";
-import banner2 from "../Images/dining-main.jpeg";
+import banner from "../Images/dining-main.jpeg";
+import banner1 from "../Images/dish-3.jpeg";
+import banner2 from "../Images/dining-1.jpeg";
 
 const images = [
   { id: 1, src: banner },
   { id: 2, src: banner1 },
   { id: 3, src: banner2 },
+  
 ];
 
 const BannerSlider = () => {
@@ -33,7 +34,7 @@ const BannerSlider = () => {
           {/* Left Side - Text */}
           <Col md={4} className="text-section">
             <h2>OUR BEST SPECIALTIES</h2>
-            <button className="view-more-btn">VIEW MORE</button>
+            {/* <button className="view-more-btn">VIEW MORE</button> */}
           </Col>
 
           {/* Right Side - Images */}

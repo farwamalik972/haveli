@@ -39,7 +39,7 @@ const KhalsaRoom = () => {
         <h2>Gallery</h2>
         <div className="gallery-grid">
           <div className="gallery-item tall" data-aos="zoom-in"></div>
-          <div className="gallery-item" data-aos="zoom-in" data-aos-delay="200"></div>
+          <div className="gallery-item mid" data-aos="zoom-in" data-aos-delay="200"></div>
           <div className="gallery-item" data-aos="zoom-in" data-aos-delay="200"></div>
           <div className="gallery-item wide" data-aos="zoom-in" data-aos-delay="400"></div>
         </div>

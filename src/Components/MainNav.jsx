@@ -16,7 +16,7 @@ function MainNav() {
                         <Nav className="mx-auto">
                             <Nav.Link as={Link} to="/" className="nav-link-custom">Home</Nav.Link>
                             {/* Dining Experience Dropdown */}
-                            <NavDropdown title={<Link to="/dining-experience" className='dropdown-title'>Dining Area</Link>} id="navbar-dropdown" className="dropdown-custom">
+                            <NavDropdown title={<Link to="/dining-experience" className='dropdown-title'>Dining Area</Link>} id="navbar-dropdown" className="dropdown-custom mb-1">
                                 <NavDropdown.Item href="/open-sky" className="dropdown-item-custom">Open to Sky</NavDropdown.Item>
                                 <NavDropdown.Item href="/haveligarden" className="dropdown-item-custom">Haveli Garden</NavDropdown.Item>
                                 <NavDropdown.Item href="/verandha" className="dropdown-item-custom">Verandah </NavDropdown.Item>
@@ -31,14 +31,14 @@ function MainNav() {
                                 <NavDropdown.Item href="/raj" className="dropdown-item-custom">Raj Room </NavDropdown.Item>
                                 <NavDropdown.Item href="/sammr" className="dropdown-item-custom">Sammar Palace</NavDropdown.Item>
                             </NavDropdown>
-                            {/* <Nav.Link as={Link} to="/gellary" className="nav-link-custom">Gallery</Nav.Link> */}
+                            <Nav.Link as={Link} to="/gellary" className="nav-link-custom">Gallery</Nav.Link>
                              {/* galry tabs Dropdown */}
-                             <NavDropdown title={<Link to="/gellary" className='dropdown-title'>Gallery</Link>} id="navbar-dropdown" className="dropdown-custom">
+                             <NavDropdown title={<Link to="/event" className='dropdown-title'>Event Decor</Link>} id="navbar-dropdown" className="dropdown-custom mb-1">
                                 <NavDropdown.Item href="/birthday" className="dropdown-item-custom">Birthday Celebration</NavDropdown.Item>
                                 <NavDropdown.Item href="/nikha" className="dropdown-item-custom">Nikkah Ceremony</NavDropdown.Item>
-                                <NavDropdown.Item href="#" className="dropdown-item-custom">Corporate Events </NavDropdown.Item>
-                                <NavDropdown.Item href="#" className="dropdown-item-custom">Off Premises Catering</NavDropdown.Item>
-                                <NavDropdown.Item href="#" className="dropdown-item-custom">Walled City of Lahore Tours</NavDropdown.Item>
+                                <NavDropdown.Item href="/corporateevent" className="dropdown-item-custom">Corporate Events </NavDropdown.Item>
+                                <NavDropdown.Item href="/offpremises" className="dropdown-item-custom">Off Premises Catering</NavDropdown.Item>
+                                <NavDropdown.Item href="/citytours" className="dropdown-item-custom">Walled City of Lahore Tours</NavDropdown.Item>
                                 <NavDropdown.Item href="/catering" className="dropdown-item-custom">Events and Buffet Information</NavDropdown.Item>
 
                             </NavDropdown>

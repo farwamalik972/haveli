@@ -1,10 +1,12 @@
 import React from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
-import brdy from "../Images/birthday.jpeg"
-import brdy1 from "../Images/brdy-1.jpeg"
-import CustomNavbar from "../Components/CustomNavbar";
+import brdy1 from "../Images/birthday.jpeg"
+import brdy2 from "../Images/prebrdy5.jpeg"
+import brdy3 from "../Images/prebrdy1.jpeg"
+import brdy4 from "../Images/prebrdy4.jpeg"
 import Footer from "../Components/Footer";
 import MainNav from "../Components/MainNav";
+
 const BirthdayPage = () => {
   return (
     <div className="birthday-page-earrper">
@@ -16,7 +18,7 @@ const BirthdayPage = () => {
       <div className="hero">🎂 Happy Birthday, Alex! 🎈</div>
 
       {/* 🎈 Fun Facts (3D Flip Cards) */}
-      <div className="fun-facts">
+      {/* <div className="fun-facts">
         <div className="flip-card">
           <div className="inner">
             <div className="front">🍕 Favorite Food</div>
@@ -35,14 +37,14 @@ const BirthdayPage = () => {
             <div className="back">Paris</div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* 📸 Interactive Gallery */}
       <div className="gallery">
-        <img src={brdy} alt="Memory 1" />
-        <img src={brdy1} alt="Memory 2" />
-        <img src={brdy} alt="Memory 3" />
-        <img src={brdy1} alt="Memory 4" />
+        <img src={brdy1} alt="Memory 1" />
+        <img src={brdy2} alt="Memory 2" />
+        <img src={brdy3} alt="Memory 3" />
+        <img src={brdy4} alt="Memory 4" />
       </div>
 
       {/* 🎊 CTA Section */}

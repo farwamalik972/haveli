@@ -2,9 +2,10 @@ import React from "react";
 import { Container, Row, Col, Card, Carousel } from "react-bootstrap";
 import CustomNavbar from "../Components/CustomNavbar";
 import Footer from "../Components/Footer";
-import gallery1 from "../Images/barood.png";
+import gallery from "../Images/board-culture.jpeg";
+import gallery1 from "../Images/barod1.jpeg";
 import gallery2 from "../Images/barood1.png";
-import gallery3 from "../Images/barood2.png";
+import gallery3 from "../Images/barod2.jpeg";
 import offer1 from "../Images/barood3.png";
 import MainNav from "../Components/MainNav";
 
@@ -27,7 +28,7 @@ const BaroodKhana = () => {
         <Container>
           <Row className="align-items-center">
             <Col md={6} className="feature-image">
-              <img src={gallery1} alt="Royal Dining" className="img-fluid" />
+              <img src={gallery} alt="Royal Dining" className="img-fluid" />
             </Col>
             <Col md={6} className="feature-text">
               <h2>Royal Dining Experience</h2>

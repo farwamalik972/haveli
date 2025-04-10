@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
- import garden from "../Images/haveli-garden.jpeg";
- import bbq from "../Images/bbq.jpeg"
- import music from "../Images/live-music.jpg"
- import event from "../Images/event (3).jpeg"
+ import garden1 from "../Images/garden1.jpeg";
+ import garden2 from "../Images/garden3.jpeg";
+ import garden3 from "../Images/garden4.jpeg";
+ import garden4 from "../Images/garden5.jpeg";
+ import garden5 from "../Images/garden1.jpeg";
+ import garden6 from "../Images/garden3.jpeg";
+ import garden7 from "../Images/garden9.jpeg";
 import Footer from "../Components/Footer";
 import MainNav from "../Components/MainNav";
 import config from "../config";
@@ -75,25 +78,24 @@ const HaveliGarden = () => {
       </section>
 
       {/* Smooth Scrolling Photo Gallery */}
-      <section className="scroll-gallery">
-        <h2 className="section-title">Mesmerizing Garden Views</h2>
-        <div className="gallery-container">
-          <div className="gallery-track">
-            <div className="gallery-column">
-              <img src={garden} alt="Garden 1" />
-              <img src={garden} alt="Garden 2" />
+       <section className="scroll-gallery">
+      <h2 className="section-title">Mesmerizing Garden Views</h2>
+      <div className="gallery-wrapper">
+        <div className="gallery-track">
+          {[...Array(2)].map((_, i) => (
+            <div className="gallery-loop" key={i}>
+              <img src={garden1} alt={`Garden ${i * 6 + 1}`} />
+              <img src={garden2} alt={`Garden ${i * 6 + 3}`} />
+              <img src={garden3} alt={`Garden ${i * 6 + 4}`} />
+              <img src={garden4} alt={`Garden ${i * 6 + 5}`} />
+              <img src={garden5} alt={`Garden ${i * 6 + 6}`} />
+              <img src={garden6} alt={`Garden ${i * 6 + 6}`} />
+              <img src={garden7} alt={`Garden ${i * 6 + 6}`} />
             </div>
-            <div className="gallery-column">
-              <img src={garden} alt="Garden 3" />
-              <img src={garden} alt="Garden 4" />
-            </div>
-            <div className="gallery-column">
-              <img src={garden} alt="Garden 5" />
-              <img src={garden} alt="Garden 6" />
-            </div>
-          </div>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
       <Footer/>
     </div>
   );

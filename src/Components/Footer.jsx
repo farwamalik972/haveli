@@ -35,7 +35,7 @@ function Footer() {
             <ul>
               <li><a href="">info@haveli.com.pk</a></li>
               <li><a href="">Phone:+92 300 841 4899</a></li>
-              <li><a href="">Phone:+92 300 841 4899</a></li>
+              <li><a href="">Phone:+92 321 465 1051</a></li>
             </ul>
             <div className="social-links">
               <a href="#"><FaFacebookF /></a>

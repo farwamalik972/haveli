@@ -27,7 +27,7 @@ function DiningExperience() {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>; // You can customize this loading state as per your design
+    return <div></div>; // You can customize this loading state as per your design
   }
 
   const {
@@ -50,11 +50,11 @@ function DiningExperience() {
       <Container className="kebabSection mt-5">
         {/* First Section */}
         <Row className="section">
-          <Col md={6} className="textSection">
+          <Col md={6} className="textSection mb-3">
             <h2>{heading_1}</h2>
             <p>{description_1}</p>
           </Col>
-          <Col md={6} className="imageSection">
+          <Col md={6} className="imageSection mb-3">
             <div className="fixed-image">
               <img
                 className="fixed-image"

@@ -2,17 +2,23 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col, Card, Form } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 import MainNav from "../Components/MainNav";
-import club from "../Images/furniture.webp";
+import club1 from "../Images/club7.jpeg";
+import club2 from "../Images/grden2.jpeg";
+import club3 from "../Images/sultant-galry.jpeg";
+import club4 from "../Images/club9.jpeg";
+import club5 from "../Images/sultant-galry1.jpeg";
+import club6 from "../Images/club6.jpeg";
+
 import Footer from "../Components/Footer";
 import { motion } from "framer-motion";
 
 const clubsData = [
-  { id: 1, name: "Night Vibes Club", image: club },
-  { id: 2, name: "Sky Lounge", image: club },
-  { id: 3, name: "Neon Beats", image: club },
-  { id: 4, name: "Retro Groove", image: club },
-  { id: 5, name: "Elite Nights", image: club },
-  { id: 6, name: "Urban Escape", image: club },
+  { id: 1, name: "Sultanate Room", image: club1 },
+  { id: 2, name: "Khalsa Room", image: club2 },
+  { id: 3, name: "Mughal Room", image: club3 },
+  { id: 4, name: "Raj Room ", image: club4 },
+  { id: 5, name: "Sammar Palace", image: club5 },
+  // { id: 6, name: "Urban Escape", image: club6 },
 ];
 
 const ClubNames = () => {

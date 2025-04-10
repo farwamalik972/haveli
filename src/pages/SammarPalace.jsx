@@ -11,8 +11,8 @@ const SammarPalace = () => {
       {/* Hero Section */}
       <section className="hero">
         <Container>
-          <Row className="align-items-center">
-            <Col md={6} className="hero-content">
+          <Row className="align-items-center mt-5">
+            <Col md={6} className="hero-content mt-5">
               <h1>Welcome to Sammar Palace</h1>
               <p>Experience luxury like never before</p>
             </Col>
@@ -28,7 +28,7 @@ const SammarPalace = () => {
         <Container>
           <Row>
             <Col md={6} className="about-image"></Col>
-            <Col md={6}>
+            <Col md={6} className="smar-text">
               <h2>About Sammar Palace</h2>
               <p>A place where luxury meets comfort.</p>
             </Col>
@@ -59,7 +59,9 @@ const SammarPalace = () => {
       <section className="cta">
         <Container>
           <h2>Book Your Stay Today!</h2>
-          <Button variant="light">Get Started</Button>
+         <a href="/contact">
+         <Button variant="light">Get Started</Button>
+         </a>
         </Container>
       </section>
       <Footer/>

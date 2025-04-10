@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col, Card } from "react-bootstrap";
-import dining from "../Images/air-dining.jpeg";
-import air from "../Images/air.jpeg";
+import dining from "../Images/verhnda1.jpeg";
+import air from "../Images/ver2.jpeg";
 import Footer from "../Components/Footer";
 import MainNav from "../Components/MainNav";
 

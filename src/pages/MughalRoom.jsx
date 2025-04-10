@@ -8,11 +8,11 @@ const MughalRoom = () => {
   return (
     <div className="mughal-wrapper">
     <MainNav/>
-    <Container fluid className="mughal-room mt-5">
+    <Container fluid className="mughal-room">
       {/* Header Section */}
       <Row className="header text-center">
         <Col>
-          <h1>🏰 The Mughal Room</h1>
+          <h1>The Mughal Room</h1>
           <p>Experience the grandeur of Mughal architecture and heritage.</p>
         </Col>
       </Row>
@@ -33,7 +33,6 @@ const MughalRoom = () => {
             ornate arches, and Persian carpets, bringing the charm of history to
             life.
           </p>
-          <Button variant="danger">Explore More</Button>
         </Col>
       </Row>
     </Container>
