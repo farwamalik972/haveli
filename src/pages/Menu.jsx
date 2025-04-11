@@ -41,6 +41,7 @@ const Menu = () => {
               name: item.menu,
               price_s: item.price_s,
               price_f: item.price_f,
+              all_price: item.all_price,
             });
           }
         });
@@ -77,51 +78,54 @@ const Menu = () => {
             <Row>
               <AnimatePresence mode="wait">
                 <h2 className="menu-title mb-4">{activeCategory}</h2>
-
                 {menuData[activeCategory] &&
-                  Object.entries(menuData[activeCategory]).map(
-                    ([subCatName, subCatData], index) => (
-                      <div key={index} className="menu-item mb-5">
-                        <motion.div
-                          className="menu-img mb-3"
-                          initial={{ scale: 0.8, opacity: 0 }}
-                          animate={{ scale: 1, opacity: 1 }}
-                          exit={{ scale: 0.8, opacity: 0 }}
-                          transition={{ duration: 0.5 }}
-                        >
-                          <h4 className="subcat-title">{subCatName}</h4>
-                          <img
-                            src={subCatData.image}
-                            alt={subCatName}
-                            style={{ width: "150px", borderRadius: "10px" }}
-                          />
-                        </motion.div>
+                  Object.entries(menuData[activeCategory]).map(([subCatName, subCatData], index) => (
+                    <motion.div
+                      key={index}
+                      className="menu-item"
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                    >
+                      {/* Hexagon Image */}
+                      <div className="menu-img">
+                        <img src={subCatData.image} alt={subCatName} />
+                      </div>
 
-                        <div className="menu-header row fw-bold mt-2 mb-2">
-                          <div className="col-md-8">Item</div>
-                          <div className="col-md-2">{subCatData.heding_name_1}</div>
-                          <div className="col-md-2">{subCatData.heding_name_2}</div>
+                      {/* Menu Content */}
+                      <div className="menu-content">
+                        <div className="menu-title">
+                          {subCatName}
+                          <p>
+                            {subCatData.heding_name_1} / {subCatData.heding_name_2}
+                          </p>
                         </div>
 
-                        {subCatData.items.map((item, i) => (
-                          <motion.div
-                            key={i}
-                            className="menu-content row mb-2"
-                            initial={{ x: -50, opacity: 0 }}
-                            animate={{ x: 0, opacity: 1 }}
-                            exit={{ x: 50, opacity: 0 }}
-                            transition={{ duration: 0.4 }}
-                          >
-                            <div className="col-md-8">{item.name}</div>
-                            <div className="col-md-2">{item.price_s}</div>
-                            <div className="col-md-2">{item.price_f}</div>
-                          </motion.div>
-                        ))}
+                        <div className="soup-list">
+                          {subCatData.items.map((item, i) => (
+                            <div className="soup-item" key={i}>
+                              <div className="soup-name">{item.name}</div>
+                              <div className="menu-price">
+                              {item.price_s && item.price_f ? (
+  <>
+    {item.price_s} / {item.price_f}
+  </>
+) : (
+  item.price_s 
 
-                        <div className="menu-border mt-3 mb-4"></div>
+)}
+
+
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+
+                        <div className="menu-border"></div>
                       </div>
-                    )
-                  )}
+                    </motion.div>
+                  ))}
+
               </AnimatePresence>
             </Row>
           </Col>
