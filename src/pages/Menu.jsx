@@ -106,14 +106,14 @@ const Menu = () => {
                             <div className="soup-item" key={i}>
                               <div className="soup-name">{item.name}</div>
                               <div className="menu-price">
-                              {item.price_s && item.price_f ? (
-  <>
-    {item.price_s} / {item.price_f}
-  </>
-) : (
-  item.price_s 
+                                {item.price_s && item.price_f ? (
+                                  <>
+                                    {item.price_s} / {item.price_f}
+                                  </>
+                                ) : (
+                                  item.price_s
 
-)}
+                                )}
 
 
                               </div>

@@ -2430,6 +2430,9 @@ label{
       .menu-content{
         .menu-title{
           font-size: 12px !important;
+          p{
+            font-size: 12px !important;
+          }
         }
         .menu-title-api{
           font-size: 12px !important;
@@ -2441,6 +2444,16 @@ label{
 
           }
         }
+      }
+    }
+    .soup-item{
+      .soup-name{
+        font-size: 14px !important;
+        font-weight: 500 !important;
+      }
+      .menu-price{
+        font-size: 14px !important;
+        font-weight: 500 !important;
       }
     }
   }
