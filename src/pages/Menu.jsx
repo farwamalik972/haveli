@@ -96,9 +96,14 @@ const Menu = () => {
                       <div className="menu-content">
                         <div className="menu-title">
                           {subCatName}
-                          <p>
-                            {subCatData.heding_name_1} / {subCatData.heding_name_2}
-                          </p>
+                       {(subCatData.heding_name_1 || subCatData.heding_name_2) && (
+  <p>
+    {subCatData.heding_name_1}
+    {subCatData.heding_name_1 && subCatData.heding_name_2 && ' / '}
+    {subCatData.heding_name_2}
+  </p>
+)}
+
                         </div>
 
                         <div className="soup-list">
@@ -106,16 +111,13 @@ const Menu = () => {
                             <div className="soup-item" key={i}>
                               <div className="soup-name">{item.name}</div>
                               <div className="menu-price">
-                                {item.price_s && item.price_f ? (
-                                  <>
-                                    {item.price_s} / {item.price_f}
-                                  </>
-                                ) : (
-                                  item.price_s
-
-                                )}
-
-
+                              {item.price_s && item.price_f ? (
+                                <>
+                                  {item.price_s} / {item.price_f}
+                                </>
+                              ) : (
+                                item.all_price
+                              )}
                               </div>
                             </div>
                           ))}
