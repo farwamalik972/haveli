@@ -27,14 +27,14 @@ const Menu = () => {
             name: item.sub_cat,
             heding_name_1: item.heding_name_1,
             heding_name_2: item.heding_name_2,
-            image: `${config.API_BASE_URL}/../uploads/sub_categories/${item.image}`,
+            image: `${config.API_BASE_URL}/uploads/sub_categories/${item.image}`,
           });
         });
 
         setMenuData(grouped);
         const categoryList = Object.keys(grouped);
         setCategories(categoryList);
-        setActiveCategory(categoryList[0]); // Set default category
+        setActiveCategory(categoryList[0]);
       })
       .catch((error) => {
         console.error("API Error:", error);

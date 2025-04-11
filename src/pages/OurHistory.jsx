@@ -22,7 +22,7 @@ function OurHistory() {
     }, []);
 
     if (loading) {
-        return <div>Loading...</div>; // You can show a loader here
+        return <div></div>; // You can show a loader here
     }
 
     if (!historyData) {
