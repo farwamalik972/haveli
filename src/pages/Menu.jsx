@@ -13,22 +13,36 @@ const Menu = () => {
 
   useEffect(() => {
     axios
-      .get(`${config.API_BASE_URL}/api/cat/all`) 
+      .get(`${config.API_BASE_URL}/api/cat/all`)
       .then((response) => {
         const data = response.data;
 
         const grouped = {};
+
         data.forEach((item) => {
-          if (!grouped[item.heading_name]) {
-            grouped[item.heading_name] = [];
+          const category = item.heading_name;
+          const subCat = item.sub_cat;
+
+          if (!grouped[category]) {
+            grouped[category] = {};
           }
 
-          grouped[item.heading_name].push({
-            name: item.sub_cat,
-            heding_name_1: item.heding_name_1,
-            heding_name_2: item.heding_name_2,
-            image: `${config.API_BASE_URL}/uploads/sub_categories/${item.image}`,
-          });
+          if (!grouped[category][subCat]) {
+            grouped[category][subCat] = {
+              heding_name_1: item.heding_name_1,
+              heding_name_2: item.heding_name_2,
+              image: `${config.API_BASE_URL}/uploads/sub_categories/${item.image}`,
+              items: [],
+            };
+          }
+
+          if (item.menu) {
+            grouped[category][subCat].items.push({
+              name: item.menu,
+              price_s: item.price_s,
+              price_f: item.price_f,
+            });
+          }
         });
 
         setMenuData(grouped);
@@ -51,7 +65,7 @@ const Menu = () => {
               {categories.map((category) => (
                 <Button
                   key={category}
-                  className={`menu-tab ${activeCategory === category ? "active" : ""}`}  // Fix the className here
+                  className={`menu-tab ${activeCategory === category ? "active" : ""}`}
                   onClick={() => setActiveCategory(category)}
                 >
                   {category}
@@ -62,40 +76,52 @@ const Menu = () => {
           <Col lg={9}>
             <Row>
               <AnimatePresence mode="wait">
-                <h2 className="menu-title">Our Menu</h2>
-                {menuData[activeCategory]?.map((item, index) => (
-                  <div key={index} className="menu-item d-flex mb-4">
-                    <motion.div
-                      className="menu-img me-4"
-                      initial={{ scale: 0.8, opacity: 0 }}
-                      animate={{ scale: 1, opacity: 1 }}
-                      exit={{ scale: 0.8, opacity: 0 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <img src={item.image} alt={item.name} style={{ width: "150px", borderRadius: "10px" }} />
-                    </motion.div>
-                    <motion.div
-                      className="menu-content"
-                      initial={{ x: -50, opacity: 0 }}
-                      animate={{ x: 0, opacity: 1 }}
-                      exit={{ x: 50, opacity: 0 }}
-                      transition={{ duration: 0.5 }}
-                    >
-                      <div className="menu-header row">
-                        <div className="col-md-8">
-                          <h4 className="menu-title">{item.name}</h4>
+                <h2 className="menu-title mb-4">{activeCategory}</h2>
+
+                {menuData[activeCategory] &&
+                  Object.entries(menuData[activeCategory]).map(
+                    ([subCatName, subCatData], index) => (
+                      <div key={index} className="menu-item mb-5">
+                        <motion.div
+                          className="menu-img mb-3"
+                          initial={{ scale: 0.8, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          exit={{ scale: 0.8, opacity: 0 }}
+                          transition={{ duration: 0.5 }}
+                        >
+                          <h4 className="subcat-title">{subCatName}</h4>
+                          <img
+                            src={subCatData.image}
+                            alt={subCatName}
+                            style={{ width: "150px", borderRadius: "10px" }}
+                          />
+                        </motion.div>
+
+                        <div className="menu-header row fw-bold mt-2 mb-2">
+                          <div className="col-md-8">Item</div>
+                          <div className="col-md-2">{subCatData.heding_name_1}</div>
+                          <div className="col-md-2">{subCatData.heding_name_2}</div>
                         </div>
-                        <div className="col-md-2">
-                          <h4 className="menu-title-api">{item.heding_name_1}</h4>
-                        </div>
-                        <div className="col-md-2">
-                          <h4 className="menu-title-api">{item.heding_name_2}</h4>
-                        </div>
+
+                        {subCatData.items.map((item, i) => (
+                          <motion.div
+                            key={i}
+                            className="menu-content row mb-2"
+                            initial={{ x: -50, opacity: 0 }}
+                            animate={{ x: 0, opacity: 1 }}
+                            exit={{ x: 50, opacity: 0 }}
+                            transition={{ duration: 0.4 }}
+                          >
+                            <div className="col-md-8">{item.name}</div>
+                            <div className="col-md-2">{item.price_s}</div>
+                            <div className="col-md-2">{item.price_f}</div>
+                          </motion.div>
+                        ))}
+
+                        <div className="menu-border mt-3 mb-4"></div>
                       </div>
-                      <div className="menu-border"></div>
-                    </motion.div>
-                  </div>
-                ))}
+                    )
+                  )}
               </AnimatePresence>
             </Row>
           </Col>
